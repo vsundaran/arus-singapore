@@ -1,0 +1,12 @@
+body {
+  overflow-x: hidden;
+}
+
+/* src/index.css or App.css */
+@font-face {
+  font-family: "General Sans Variable";
+  src: url("/fonts/General-Sans-Variable.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
