@@ -10,16 +10,26 @@ import message from "../../assets/img/message.svg";
 
 const Banner: React.FC = () => {
   return (
-    <Box width="100%" position={"relative"}>
-      <img src={banner} style={{ width: "100%" }} />
-      <Box position={"absolute"} top={0} left={0} width="100%" height="100%">
-        <Box my={"60px"}>
+    <Box
+      width="100%"
+      position="relative"
+      sx={{
+        backgroundImage: `url(${banner})`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        minHeight: "1000px",
+      }}
+    >
+      {/* <img src={banner} style={{ width: "100%" }} /> */}
+      <Box width="100%" height="100%">
+        <Box mb={"60px"} pt={"60px"}>
           <center>
             <AspireChip />
           </center>
         </Box>
         <center>
           <Typography
+            display={{ md: "block", xs: "none" }}
             variant="h3"
             color="white"
             sx={{
@@ -38,15 +48,35 @@ const Banner: React.FC = () => {
           >
             Empowering People, Enabling Organizations
           </Typography>
+          <Typography
+            display={{ md: "none", xs: "block" }}
+            variant="h3"
+            color="white"
+            sx={{
+              color: "#2C496D",
+              textAlign: "center",
+              fontSize: "32px",
+              fontStyle: "normal",
+              fontWeight: 700,
+              lineHeight: "40px",
+              letterSpacing: "1px",
+            }}
+          >
+            Inspiring through Innovation
+          </Typography>
         </center>
 
         <Box
-          position="absolute"
-          //   top="50%"
-          left="50%"
-          bottom={"25%"}
+          display={"flex"}
+          justifyContent={"center"}
+          position={"absolute"}
+          bottom={"30%"}
+          left={"50%"}
+          width={"100%"}
           zIndex={1}
-          sx={{ transform: "translate(-50%, -50%)" }}
+          sx={{
+            transform: { md: "translateX(-50%)", xs: "translateX(-50%)" },
+          }}
         >
           <FlowtingQuateBar>
             <Typography
@@ -57,9 +87,9 @@ const Banner: React.FC = () => {
                 fontSize: "20px",
                 fontStyle: "normal",
                 fontWeight: 600,
-                lineHeight: "40px" /* 200% */,
+                lineHeight: "40px",
                 letterSpacing: "1px",
-                maxWidth: "1095px",
+                maxWidth: "100%",
                 flexShrink: 0,
               }}
             >
@@ -83,7 +113,15 @@ const Banner: React.FC = () => {
             boxShadow: "0 4px 4px 0 rgba(0, 0, 0, 0.25)",
           }}
         >
-          <Box display={"flex"} gap={"34px"}>
+          <Box
+            display={"flex"}
+            gap={"34px"}
+            flexWrap={"wrap"}
+            justifyContent={"center"}
+            sx={{
+              mt: { xs: 5, md: 0 },
+            }}
+          >
             <StatCard title="Projects" count="100 +" />
             <StatCard title="Clients" count="25 +" />
             <StatCard title="Employments" count="100 +" />

@@ -27,43 +27,45 @@ const ServiceBanner: React.FC = () => {
       >
         <Box
           width={"100%"}
-          display={"flex"}
-          maxWidth={"1100px"}
+          display={{ xs: "block", md: "flex" }}
+          maxWidth={"100%"}
           gap={"39px"}
           justifyContent={"center"}
+          mx={"auto"}
         >
-          <ServiceCard>
-            <img src={coder} style={{ width: "50%" }} />
-            <Box
-              sx={{
-                position: "absolute",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                top: "-30%",
-                right: "-5%",
-                width: "114px",
-                height: "127px",
-                borderRadius: "100%",
-                background: "#E0F0F7",
-              }}
-            >
-              <Box mt={5}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="11"
-                  viewBox="0 0 24 11"
-                  fill="none"
-                >
-                  <path
-                    d="M12 10.2143C11.9016 10.2155 11.8041 10.1952 11.7137 10.1546C11.6233 10.114 11.542 10.0541 11.475 9.97857L4.725 2.90714C4.425 2.59286 4.425 2.10571 4.725 1.79143C5.025 1.47714 5.49 1.47714 5.79 1.79143L12.015 8.31286L18.225 1.80714C18.525 1.49286 18.99 1.49286 19.29 1.80714C19.59 2.12143 19.59 2.60857 19.29 2.92286L12.54 9.99428C12.39 10.1514 12.195 10.23 12.015 10.23L12 10.2143Z"
-                    fill="#325A7D"
-                  />
-                </svg>
+          <ServiceCard sx={{ display: { xs: "block", md: "flex" } }}>
+            <img src={coder} style={{ width: "100%" }} />
+            <Box width={"100%"} pt={"16px"}>
+              <Box
+                sx={{
+                  position: "absolute",
+                  display: "flex",
+                  pt: "10px",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  top: "-30%",
+                  right: "-5%",
+                  width: "114px",
+                  height: "127px",
+                  borderRadius: "100%",
+                  background: "#E0F0F7",
+                }}
+              >
+                <Box mt={5}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="11"
+                    viewBox="0 0 24 11"
+                    fill="none"
+                  >
+                    <path
+                      d="M12 10.2143C11.9016 10.2155 11.8041 10.1952 11.7137 10.1546C11.6233 10.114 11.542 10.0541 11.475 9.97857L4.725 2.90714C4.425 2.59286 4.425 2.10571 4.725 1.79143C5.025 1.47714 5.49 1.47714 5.79 1.79143L12.015 8.31286L18.225 1.80714C18.525 1.49286 18.99 1.49286 19.29 1.80714C19.59 2.12143 19.59 2.60857 19.29 2.92286L12.54 9.99428C12.39 10.1514 12.195 10.23 12.015 10.23L12 10.2143Z"
+                      fill="#325A7D"
+                    />
+                  </svg>
+                </Box>
               </Box>
-            </Box>
-            <Box width={"100%"}>
               <img src={db} />
               <Typography
                 fontWeight={600}

@@ -7,7 +7,8 @@ const AspireChip = ({ onClick, className = "" }: any) => {
       onClick={onClick}
       sx={{
         display: "flex",
-        width: "390px",
+        maxWidth: "390px",
+        width: "100%",
         height: "42px",
         justifyContent: "center",
         alignItems: "center",
