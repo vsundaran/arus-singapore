@@ -135,7 +135,7 @@ export default function Service() {
     <Box>
       <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 2 }}>
         {services.map((service, index) => (
-          <Grid key={index} size={6}>
+          <Grid key={index} size={{ xs: 12, md: 6 }}>
             <ServiceCard service={service} />
           </Grid>
         ))}
@@ -151,7 +151,7 @@ function Item({ children }: { children: React.ReactNode }) {
         paddingY: "44px",
         paddingX: "40px",
         width: "100%",
-        height: "288px",
+        minHeight: "288px",
         flexShrink: 0,
         borderRadius: "20px",
         border: "1px solid #D7DFDF",

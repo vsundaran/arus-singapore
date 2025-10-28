@@ -18,7 +18,6 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
     alignItems: "end",
     gap: "12px",
     position: "relative",
-    margin: "auto",
     width: "100%",
     maxWidth: "614px",
     overflow: "hidden",

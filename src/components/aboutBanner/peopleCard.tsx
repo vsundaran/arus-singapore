@@ -30,7 +30,7 @@ export default function PeopleCard() {
     <Box
       sx={{
         width: "100%",
-        height: "228px",
+        minHeight: "228px",
         paddingY: "22px",
         paddingX: "32px",
         flexShrink: 0,

@@ -27,15 +27,36 @@ const ServiceBanner: React.FC = () => {
       >
         <Box
           width={"100%"}
-          display={{ xs: "block", md: "flex" }}
+          display={{ xs: "flex" }}
+          flexDirection={{ xs: "column", md: "row" }}
+          alignItems={{ xs: "center" }}
           maxWidth={"100%"}
           gap={"39px"}
           justifyContent={"center"}
-          mx={"auto"}
+          className="service-cards"
+          // mx={"auto"}
         >
-          <ServiceCard sx={{ display: { xs: "block", md: "flex" } }}>
-            <img src={coder} style={{ width: "100%" }} />
-            <Box width={"100%"} pt={"16px"}>
+          <ServiceCard
+            sx={{
+              display: { xs: "block", md: "flex" },
+              alignItems: "normal",
+              justifyContent: "end",
+              // marginX: { xs: "auto", md: "none" },
+            }}
+          >
+            <Box sx={{ width: "100%", display: "flex" }}>
+              <img src={coder} style={{ width: "100%", objectFit: "cover" }} />
+            </Box>
+            <Box
+              overflow={"hidden"}
+              position={"relative"}
+              width={"100%"}
+              display={"flex"}
+              flexDirection={"column"}
+              justifyContent={"end"}
+              paddingX={{ md: "0px", xs: "20px" }}
+              paddingY={"12px"}
+            >
               <Box
                 sx={{
                   position: "absolute",
@@ -43,15 +64,15 @@ const ServiceBanner: React.FC = () => {
                   pt: "10px",
                   justifyContent: "center",
                   alignItems: "center",
-                  top: "-30%",
+                  top: "-20%",
                   right: "-5%",
                   width: "114px",
-                  height: "127px",
-                  borderRadius: "100%",
+                  height: "114px",
+                  borderRadius: "50%",
                   background: "#E0F0F7",
                 }}
               >
-                <Box mt={5}>
+                <Box>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -66,11 +87,11 @@ const ServiceBanner: React.FC = () => {
                   </svg>
                 </Box>
               </Box>
-              <img src={db} />
+              <img src={db} style={{ maxWidth: "42px" }} />
               <Typography
                 fontWeight={600}
-                mb={"8x"}
-                mt={"0px"}
+                mb={"4px"}
+                mt={"12px"}
                 sx={{
                   fontSize: "16px",
                   fontStyle: "normal",
@@ -95,50 +116,68 @@ const ServiceBanner: React.FC = () => {
                   fontWeight: 400,
                   lineHeight: "20px",
                   letterSpacing: "0.2px",
-                  mb: "16px",
                 }}
               >
                 End-to-end data pipeline solutions for modern businesses
               </Typography>
             </Box>
           </ServiceCard>
-          <ServiceCard>
-            <img src={laptop} style={{ width: "50%" }} />
-            <Box
-              sx={{
-                position: "absolute",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                top: "-30%",
-                right: "-5%",
-                width: "114px",
-                height: "127px",
-                borderRadius: "100%",
-                background: "#E7FFF1",
-              }}
-            >
-              <Box mt={5}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="11"
-                  viewBox="0 0 24 11"
-                  fill="none"
-                >
-                  <path
-                    d="M12 10.2143C11.9016 10.2155 11.8041 10.1952 11.7137 10.1546C11.6233 10.114 11.542 10.0541 11.475 9.97857L4.725 2.90714C4.425 2.59286 4.425 2.10571 4.725 1.79143C5.025 1.47714 5.49 1.47714 5.79 1.79143L12.015 8.31286L18.225 1.80714C18.525 1.49286 18.99 1.49286 19.29 1.80714C19.59 2.12143 19.59 2.60857 19.29 2.92286L12.54 9.99428C12.39 10.1514 12.195 10.23 12.015 10.23L12 10.2143Z"
-                    fill="#325A7D"
-                  />
-                </svg>
-              </Box>
+          <ServiceCard
+            sx={{
+              display: { xs: "block", md: "flex" },
+              alignItems: "normal",
+              justifyContent: "end",
+              marginx: { xs: "auto", md: "none" },
+            }}
+          >
+            <Box sx={{ width: "100%", display: "flex" }}>
+              <img src={laptop} style={{ width: "100%", objectFit: "cover" }} />
             </Box>
-            <Box width={"100%"}>
-              <img src={web} />
+            <Box
+              overflow={"hidden"}
+              position={"relative"}
+              width={"100%"}
+              display={"flex"}
+              flexDirection={"column"}
+              justifyContent={"end"}
+              paddingX={{ md: "0px", xs: "20px" }}
+              paddingY={"12px"}
+            >
+              <Box
+                sx={{
+                  position: "absolute",
+                  display: "flex",
+                  pt: "10px",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  top: "-20%",
+                  right: "-5%",
+                  width: "114px",
+                  height: "114px",
+                  borderRadius: "50%",
+                  background: "#E7FFF1",
+                }}
+              >
+                <Box>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="11"
+                    viewBox="0 0 24 11"
+                    fill="none"
+                  >
+                    <path
+                      d="M12 10.2143C11.9016 10.2155 11.8041 10.1952 11.7137 10.1546C11.6233 10.114 11.542 10.0541 11.475 9.97857L4.725 2.90714C4.425 2.59286 4.425 2.10571 4.725 1.79143C5.025 1.47714 5.49 1.47714 5.79 1.79143L12.015 8.31286L18.225 1.80714C18.525 1.49286 18.99 1.49286 19.29 1.80714C19.59 2.12143 19.59 2.60857 19.29 2.92286L12.54 9.99428C12.39 10.1514 12.195 10.23 12.015 10.23L12 10.2143Z"
+                      fill="#325A7D"
+                    />
+                  </svg>
+                </Box>
+              </Box>
+              <img src={web} style={{ maxWidth: "42px" }} />
               <Typography
                 fontWeight={600}
-                mb={"8x"}
-                mt={"0px"}
+                mb={"4px"}
+                mt={"12px"}
                 sx={{
                   fontSize: "16px",
                   fontStyle: "normal",
@@ -163,7 +202,6 @@ const ServiceBanner: React.FC = () => {
                   fontWeight: 400,
                   lineHeight: "20px",
                   letterSpacing: "0.2px",
-                  mb: "16px",
                 }}
               >
                 Modern web applications with cutting-edge technologies

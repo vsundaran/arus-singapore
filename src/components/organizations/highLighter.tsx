@@ -7,15 +7,23 @@ export default function Highlighter() {
         width: "100%",
         flexShrink: 0,
         borderRadius: "15px",
-        paddingY: "40px",
-        paddingX: "120px",
-        display: "flex",
+        paddingY: { md: "40px", xs: "22px" },
+        paddingX: { md: "120px", xs: "22px" },
+        display: { xs: "block", sm: "flex" },
+        // flexWrap: "wrap",
+        gap: "10px",
         justifyContent: "space-between",
         background: "linear-gradient(182deg, #FFCD17 18.86%, #D78E28 98.73%)",
         boxShadow: "0 4px 4px 0 rgba(0, 0, 0, 0.25) inset",
       }}
     >
-      <Box>
+      <Box
+        width={"100%"}
+        mb={{ xs: 2, sm: 0 }}
+        display={"flex"}
+        flexDirection={"column"}
+        alignItems={"center"}
+      >
         <Box
           sx={{
             mb: "14px",
@@ -40,6 +48,8 @@ export default function Highlighter() {
               fontWeight: 600,
               lineHeight: "20px",
               letterSpacing: "0.2px",
+
+              textAlign: "center",
               background: "linear-gradient(180deg, #D78E28 0%, #FFCD17 100%)",
               backgroundClip: "text",
               WebkitBackgroundClip: "text",
@@ -57,12 +67,19 @@ export default function Highlighter() {
             fontWeight: 700,
             lineHeight: "20px",
             letterSpacing: "0.2px",
+            textAlign: "center",
           }}
         >
           Trusted Clients
         </Typography>
       </Box>
-      <Box>
+      <Box
+        width={"100%"}
+        mb={{ xs: 2, sm: 0 }}
+        display={"flex"}
+        flexDirection={"column"}
+        alignItems={"center"}
+      >
         <Box
           sx={{
             mb: "14px",
@@ -87,6 +104,8 @@ export default function Highlighter() {
               fontWeight: 600,
               lineHeight: "20px",
               letterSpacing: "0.2px",
+
+              textAlign: "center",
               background: "linear-gradient(180deg, #D78E28 0%, #FFCD17 100%)",
               backgroundClip: "text",
               WebkitBackgroundClip: "text",
@@ -104,12 +123,20 @@ export default function Highlighter() {
             fontWeight: 700,
             lineHeight: "20px",
             letterSpacing: "0.2px",
+
+            textAlign: "center",
           }}
         >
           Technology Suppliers
         </Typography>
       </Box>
-      <Box>
+      <Box
+        width={"100%"}
+        mb={{ xs: 2, sm: 0 }}
+        display={"flex"}
+        flexDirection={"column"}
+        alignItems={"center"}
+      >
         <Box
           sx={{
             mb: "14px",
@@ -134,15 +161,31 @@ export default function Highlighter() {
               fontWeight: 600,
               lineHeight: "20px",
               letterSpacing: "0.2px",
+
+              textAlign: "center",
               background: "linear-gradient(180deg, #D78E28 0%, #FFCD17 100%)",
               backgroundClip: "text",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
             }}
           >
-            12
+            20
           </Typography>
         </Box>
+        <Typography
+          sx={{
+            color: "#FFF",
+            fontSize: "16px",
+            fontStyle: "normal",
+            fontWeight: 700,
+            lineHeight: "20px",
+            letterSpacing: "0.2px",
+
+            textAlign: "center",
+          }}
+        >
+          Technology Suppliers
+        </Typography>
       </Box>
     </Box>
   );

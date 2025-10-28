@@ -11,8 +11,11 @@ interface CategoryButtonProps {
 
 const StyledButton = styled(Button)<{ selected?: boolean }>(({ selected }) => ({
   display: "flex",
-  width: "113px",
-  padding: "10px 30px",
+  maxWidth: "113px",
+  minWidth: "fit-content",
+  width: "100%",
+  paddingY: "10px",
+  paddingX: { md: "30px", xs: "10px" },
   justifyContent: "center",
   alignItems: "center",
   gap: "10px",
@@ -45,6 +48,8 @@ const CategoryButton: React.FC<CategoryButtonProps> = ({
           fontWeight: 300,
           lineHeight: "20px",
           letterSpacing: "0.2px",
+          overflow: "hidden",
+          textOverflow: "ellipsis",
         }}
       >
         {label}

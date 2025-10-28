@@ -4,7 +4,7 @@ export default function SolutionCard() {
   return (
     <Box
       sx={{
-        maxWidth: "550px",
+        maxWidth: "100%",
         minHeight: "148px",
         padding: "16px",
         flexShrink: 0,
@@ -57,7 +57,7 @@ export default function SolutionCard() {
           fontWeight: 400,
           lineHeight: "20px",
           letterSpacing: "0.2px",
-          width: "453.364px",
+          width: "100%",
         }}
       >
         The bank struggled with fragmented data across 150+ legacy systems,
@@ -66,7 +66,7 @@ export default function SolutionCard() {
         real-time fraud detection.
       </Typography>
       <Box
-        display={"flex"}
+        display={{ md: "flex", xs: "block" }}
         gap={"12px"}
         mt={1}
         flexWrap={"nowrap"}

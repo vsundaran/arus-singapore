@@ -6,11 +6,11 @@ export default function Footer() {
       <Box
         sx={{
           width: "100%",
-          height: 300,
-          paddingX: "84px",
-          paddingY: "44px",
+          minHeight: 300,
+          paddingX: { md: "84px", xs: "30px" },
+          paddingY: { md: "44px", xs: "30px" },
           flexShrink: 0,
-          display: "flex",
+          display: { md: "flex", xs: "block" },
           justifyContent: "space-between",
           borderRadius: "50px 50px 0 0",
           background: "linear-gradient(90deg, #0D2B53 0%, #2162B8 100%)",
@@ -40,7 +40,7 @@ export default function Footer() {
         display={"flex"}
         justifyContent={"center"}
         alignItems={"center"}
-        sx={{ background: "#E4F0FF" }}
+        sx={{ background: { md: "#E4F0FF", xs: "transparent" } }}
       >
         <Typography
           sx={{
@@ -61,9 +61,9 @@ export default function Footer() {
 
 const Detail = ({ title, content }: { title: string; content: string[] }) => {
   return (
-    <Box maxWidth={"296px"}>
+    <Box maxWidth={"296px"} mb={{ md: 0, xs: 5 }}>
       <Typography
-        mb={3}
+        mb={{ md: 3, xs: 0 }}
         component="h2"
         sx={{
           color: "#FFD12B",

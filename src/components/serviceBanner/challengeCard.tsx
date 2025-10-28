@@ -4,7 +4,7 @@ export default function ChallengeCard() {
   return (
     <Box
       sx={{
-        maxWidth: "550px",
+        maxWidth: "100%",
         height: "100%",
         padding: "16px",
         flexShrink: 0,
@@ -55,7 +55,7 @@ export default function ChallengeCard() {
           fontWeight: 400,
           lineHeight: "20px",
           letterSpacing: "0.2px",
-          width: "453.364px",
+          width: "100%",
         }}
       >
         The bank struggled with fragmented data across 150+ legacy systems,

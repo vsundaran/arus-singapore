@@ -21,7 +21,7 @@ const OrganisationBanner: React.FC = () => {
         <Box
           sx={{
             paddingTop: "42px",
-            paddingX: "60px",
+            paddingX: { md: "60px", xs: "10px" },
             maxWidth: "1337px",
             overflow: "hidden",
             width: "100%",

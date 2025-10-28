@@ -4,10 +4,12 @@ import { styled } from "@mui/material/styles";
 
 // Import PaginationItem
 import PaginationItem from "@mui/material/PaginationItem";
+import { Button } from "@mui/material";
 
 const CustomPagination = styled(Pagination)(({ theme }) => ({
   "& .MuiPagination-ul": {
     justifyContent: "center",
+    flexWrap: "nowrap",
   },
   "& .MuiPaginationItem-root": {
     border: "1px solid #E3A44D",
@@ -16,7 +18,8 @@ const CustomPagination = styled(Pagination)(({ theme }) => ({
     fontFamily: "General Sans Variable, sans-serif",
     fontSize: "14px",
     fontWeight: 400,
-    minWidth: "36px",
+    maxWidth: "fit-content",
+    width: "fit-content",
     height: "36px",
     margin: "0 4px",
   },
@@ -29,7 +32,7 @@ const CustomPagination = styled(Pagination)(({ theme }) => ({
     backgroundColor: "rgba(227, 164, 77, 0.1)",
   },
   "& .MuiPaginationItem-previousNext": {
-    padding: "0 14px",
+    padding: "0 0px",
   },
 }));
 
@@ -53,11 +56,10 @@ export default function StyledPagination() {
 
 // Custom Previous button component
 const PreviousButton = ({ ...props }) => (
-  <button
+  <Button
     {...props}
     style={{
-      // border: "1px solid #E3A44D",
-      // borderRadius: "8px",
+      textTransform: "none",
       color: "#E3A44D",
       outline: "none",
       border: "none",
@@ -66,23 +68,25 @@ const PreviousButton = ({ ...props }) => (
       minWidth: "auto",
       height: "36px",
       margin: "0 4px",
-      padding: "0 14px",
+      padding: "0 0px",
       backgroundColor: "transparent",
       cursor: "pointer",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
     }}
+    sx={{ px: { md: "20px !important", xs: 0 } }}
   >
     Previous
-  </button>
+  </Button>
 );
 
 // Custom Next button component
 const NextButton = ({ ...props }) => (
-  <button
+  <Button
     {...props}
     style={{
+      textTransform: "none",
       color: "#E3A44D",
       outline: "none",
       border: "none",
@@ -91,14 +95,15 @@ const NextButton = ({ ...props }) => (
       minWidth: "auto",
       height: "36px",
       margin: "0 4px",
-      padding: "0 14px",
+      padding: "0 0px",
       backgroundColor: "transparent",
       cursor: "pointer",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
     }}
+    sx={{ px: { md: "20px !important", xs: 0 } }}
   >
     Next
-  </button>
+  </Button>
 );

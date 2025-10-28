@@ -44,13 +44,9 @@ const AboutBanner: React.FC = () => {
     ...commonTypographyStyles,
     paddingX: "10px",
     background: "#FFFFFF",
-    position: "absolute",
-    top: "-16px",
-    left: "50%",
-    transform: "translateX(-50%)",
     textAlign: "center",
     width: "fit-content",
-    whiteSpace: "nowrap",
+    whiteSpace: "wrap",
     overflow: "visible",
   };
 
@@ -75,10 +71,10 @@ const AboutBanner: React.FC = () => {
       <Box display={"flex"} justifyContent={"center"}>
         <Box
           sx={{
-            width: "1339px",
+            maxWidth: "100%",
             paddingX: "35px",
             paddingY: "60px",
-            height: "431px",
+            minHeight: "431px",
             flexShrink: 0,
             borderRadius: "25px",
             position: "relative",
@@ -97,23 +93,27 @@ const AboutBanner: React.FC = () => {
           }}
         >
           {/* Quote Section */}
-          <Typography component="div" sx={quoteBoxStyles}>
-            <Box component="span" sx={boldBlueTextStyles}>
-              “Arus{" "}
+          <center>
+            <Box mt={"-78px"} mb={"40px"}>
+              <Typography component="div" sx={quoteBoxStyles}>
+                <Box component="span" sx={boldBlueTextStyles}>
+                  “Arus{" "}
+                </Box>
+                believes that every success story is built on the{" "}
+                <Box component="span" sx={gradientTextStyles}>
+                  strength of people and the power of organizations ”
+                </Box>
+              </Typography>
             </Box>
-            believes that every success story is built on the{" "}
-            <Box component="span" sx={gradientTextStyles}>
-              strength of people and the power of organizations ”
-            </Box>
-          </Typography>
+          </center>
 
           {/* Cards Section */}
           <Box mb={"45px"}>
             <Grid container spacing={{ xs: 1, sm: 2, md: 3 }}>
-              <Grid size={6}>
+              <Grid size={{ md: 6, xs: 12, sm: 6 }}>
                 <PeopleCard />
               </Grid>
-              <Grid size={6}>
+              <Grid size={{ md: 6, xs: 12, sm: 6 }}>
                 <OrganisationCard />
               </Grid>
             </Grid>

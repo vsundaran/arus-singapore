@@ -4,7 +4,7 @@ export default function PerformanceCard() {
   return (
     <Box
       sx={{
-        maxWidth: "550px",
+        maxWidth: "100%",
         height: "100%",
         padding: "16px",
         flexShrink: 0,
@@ -54,11 +54,11 @@ export default function PerformanceCard() {
       </Box>
       <Box mt={"9px"}>
         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 1 }}>
-          <Grid size={4}>
+          <Grid size={{ md: 4, xs: 6 }}>
             <Box
               padding={"9px"}
               sx={{
-                maxWidth: 170,
+                // maxWidth: 170,
                 minHeight: 74,
                 height: "100%",
                 flexShrink: 0,
@@ -148,11 +148,11 @@ export default function PerformanceCard() {
               </Typography>
             </Box>
           </Grid>
-          <Grid size={4}>
+          <Grid size={{ md: 4, xs: 6 }}>
             <Box
               padding={"9px"}
               sx={{
-                maxWidth: 170,
+                // maxWidth: 170,
                 minHeight: 74,
                 height: "100%",
                 flexShrink: 0,
@@ -242,11 +242,11 @@ export default function PerformanceCard() {
               </Typography>
             </Box>
           </Grid>
-          <Grid size={4}>
+          <Grid size={{ md: 4, xs: 6 }}>
             <Box
               padding={"9px"}
               sx={{
-                maxWidth: 170,
+                // maxWidth: 170,
                 minHeight: 74,
                 height: "100%",
                 flexShrink: 0,
@@ -336,11 +336,11 @@ export default function PerformanceCard() {
               </Typography>
             </Box>
           </Grid>
-          <Grid size={4}>
+          <Grid size={{ md: 4, xs: 6 }}>
             <Box
               padding={"9px"}
               sx={{
-                maxWidth: 170,
+                // maxWidth: 170,
                 minHeight: 74,
                 height: "100%",
                 flexShrink: 0,
@@ -430,11 +430,11 @@ export default function PerformanceCard() {
               </Typography>
             </Box>
           </Grid>
-          <Grid size={4}>
+          <Grid size={{ md: 4, xs: 6 }}>
             <Box
               padding={"9px"}
               sx={{
-                maxWidth: 170,
+                // maxWidth: 170,
                 minHeight: 74,
                 height: "100%",
                 flexShrink: 0,
@@ -524,11 +524,11 @@ export default function PerformanceCard() {
               </Typography>
             </Box>
           </Grid>
-          <Grid size={4}>
+          <Grid size={{ md: 4, xs: 6 }}>
             <Box
               padding={"9px"}
               sx={{
-                maxWidth: 170,
+                // maxWidth: 170,
                 minHeight: 74,
                 height: "100%",
                 flexShrink: 0,

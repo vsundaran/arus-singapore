@@ -6,7 +6,7 @@ export default function Aspire() {
       sx={{
         display: "flex",
         width: "100%",
-        height: "184px",
+        minHeight: "184px",
         padding: "10px",
         justifyContent: "center",
         alignItems: "center",
@@ -19,12 +19,14 @@ export default function Aspire() {
       <Typography
         sx={{
           color: "#FFF",
-          fontFamily: "Inter",
-          fontSize: "64px",
+          fontFamily: "Inter !important",
+          fontSize: { xs: "32px", md: "64px" },
           fontStyle: "normal",
-          fontWeight: 300,
-          lineHeight: "20px",
+          fontWeight: { xs: "800", md: "300" },
           letterSpacing: "0.2px",
+          overflow: "hidden",
+          textOverflow: "ellipsis",
+          whiteSpace: "nowrap",
         }}
       >
         ASPIRE TO INSPIRE

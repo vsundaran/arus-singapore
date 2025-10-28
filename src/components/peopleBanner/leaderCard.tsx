@@ -12,6 +12,9 @@ const NameTypography = ({ children }: { children: React.ReactNode }) => (
       fontWeight: 600,
       lineHeight: "20px",
       letterSpacing: "0.2px",
+      whiteSpace: "nowrap",
+      overflow: "hidden",
+      textOverflow: "ellipsis",
     }}
   >
     {children}
@@ -31,6 +34,9 @@ const GradientTypography = ({ children }: { children: React.ReactNode }) => (
       backgroundClip: "text",
       WebkitBackgroundClip: "text",
       WebkitTextFillColor: "transparent",
+      whiteSpace: "nowrap",
+      overflow: "hidden",
+      textOverflow: "ellipsis",
     }}
   >
     {children}
@@ -46,6 +52,9 @@ const InfoTypography = ({ children }: { children: React.ReactNode }) => (
       fontWeight: 300,
       lineHeight: "20px",
       letterSpacing: "0.2px",
+      whiteSpace: "nowrap",
+      overflow: "hidden",
+      textOverflow: "ellipsis",
     }}
   >
     {children}
@@ -267,7 +276,7 @@ export default function LeaderCard() {
       sx={{
         padding: "12px 18px",
         width: "100%",
-        height: "401px",
+        minHeight: "401px",
         flexShrink: 0,
         borderRadius: "25px",
         border: "1px solid #A8AFB0",
@@ -277,16 +286,26 @@ export default function LeaderCard() {
       <Box display="flex" justifyContent="space-between" alignItems="start">
         <Box display="flex" gap="10px" alignItems="center">
           <Avatar src={elan} sx={{ width: "135px", height: "135px" }} />
-          <Box>
+          <Box maxWidth={"100px"}>
             <NameTypography>Elan Chezhian</NameTypography>
             <GradientTypography>Founder & CEO</GradientTypography>
-            <Box display="flex" alignItems="center" gap="10px">
+            <Box
+              display="flex"
+              alignItems="center"
+              gap="10px"
+              flexWrap={"wrap"}
+            >
               <InfoItem icon={<LocationIcon />} text="Singapore" />
               <InfoItem icon={<CalendarIcon />} text="20 years" />
             </Box>
           </Box>
         </Box>
-        <Box display="flex" alignItems="center" mt={3} gap="17px">
+        <Box
+          display={{ md: "flex", xs: "none" }}
+          alignItems="center"
+          mt={3}
+          gap="17px"
+        >
           <PlayIcon />
           <PortfolioIcon />
         </Box>
@@ -306,7 +325,7 @@ export default function LeaderCard() {
             rowSpacing={1}
             columnSpacing={{ xs: 1, sm: 2, md: 3 }}
           >
-            <Grid size={6}>
+            <Grid size={{ xs: 12, md: 6 }}>
               <Box>
                 <SectionHeader>Technical:</SectionHeader>
                 <Box display="flex" gap="10px" flexWrap="wrap">
@@ -317,7 +336,7 @@ export default function LeaderCard() {
                 </Box>
               </Box>
             </Grid>
-            <Grid size={6}>
+            <Grid size={{ xs: 12, md: 6 }}>
               <Box>
                 <SectionHeader>Functional:</SectionHeader>
                 <Box display="flex" gap="10px" flexWrap="wrap">
@@ -331,7 +350,9 @@ export default function LeaderCard() {
         </Box>
 
         <Box mt={2} display="flex" alignItems="center" gap="16px">
-          <StarIcon />
+          <Box minWidth={"20px"}>
+            <StarIcon />
+          </Box>
           <Box
             sx={{
               display: "flex",

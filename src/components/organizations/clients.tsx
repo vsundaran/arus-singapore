@@ -25,46 +25,46 @@ export default function Clients() {
         mt={"26px"}
         mb={"30px"}
       >
-        <Grid size={2}>
+        <Grid size={{ xs: 6, md: 2 }}>
           <CBS />
         </Grid>
-        <Grid size={2}>
+        <Grid size={{ xs: 6, md: 2 }}>
           <SBS />
         </Grid>
-        <Grid size={2}>
+        <Grid size={{ xs: 6, md: 2 }}>
           <CBS />
         </Grid>
-        <Grid size={2}>
+        <Grid size={{ xs: 6, md: 2 }}>
           <SBS />
         </Grid>
-        <Grid size={2}>
+        <Grid size={{ xs: 6, md: 2 }}>
           <CBS />
         </Grid>
-        <Grid size={2}>
+        <Grid size={{ xs: 6, md: 2 }}>
           <SBS />
         </Grid>
-        <Grid size={2}>
+        <Grid size={{ xs: 6, md: 2 }}>
           <CBS />
         </Grid>
-        <Grid size={2}>
+        <Grid size={{ xs: 6, md: 2 }}>
           <SBS />
         </Grid>
-        <Grid size={2}>
+        <Grid size={{ xs: 6, md: 2 }}>
           <CBS />
         </Grid>
-        <Grid size={2}>
+        <Grid size={{ xs: 6, md: 2 }}>
           <SBS />
         </Grid>
-        <Grid size={2}>
+        <Grid size={{ xs: 6, md: 2 }}>
           <CBS />
         </Grid>
-        <Grid size={2}>
+        <Grid size={{ xs: 6, md: 2 }}>
           <SBS />
         </Grid>
-        <Grid size={2}>
+        <Grid size={{ xs: 6, md: 2 }}>
           <CBS />
         </Grid>
-        <Grid size={2}>
+        <Grid size={{ xs: 6, md: 2 }}>
           <SBS />
         </Grid>
       </Grid>
