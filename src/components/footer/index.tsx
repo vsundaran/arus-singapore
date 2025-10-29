@@ -7,8 +7,8 @@ export default function Footer() {
         sx={{
           width: "100%",
           minHeight: 300,
-          paddingX: { md: "84px", xs: "30px" },
-          paddingY: { md: "44px", xs: "30px" },
+          paddingX: { md: "84px", xs: "60px" },
+          paddingY: { md: "44px", xs: "60px" },
           flexShrink: 0,
           display: { md: "flex", xs: "block" },
           justifyContent: "space-between",

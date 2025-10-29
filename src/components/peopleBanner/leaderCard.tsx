@@ -281,6 +281,10 @@ export default function LeaderCard() {
         borderRadius: "25px",
         border: "1px solid #A8AFB0",
         backgroundColor: "#FFF",
+
+        "&:hover": {
+          boxShadow: "0 0 0 1px #D78E28",
+        },
       }}
     >
       <Box display="flex" justifyContent="space-between" alignItems="start">

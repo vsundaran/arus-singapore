@@ -15,7 +15,10 @@ const AspireChip = ({ onClick, className = "" }: any) => {
         gap: "10px",
         flexShrink: 0,
         borderRadius: "25px",
-        background: "linear-gradient(90deg, #708EB4 0%, #40618C 100%)",
+        background: "linear-gradient(90deg, #40618C 0%, #708EB4 100%)",
+        "&:hover": {
+          background: "linear-gradient(90deg, #708EB4 0%, #40618C 100%)",
+        },
         boxShadow: "0 4px 4px 0 rgba(0, 0, 0, 0.25) inset",
         cursor: onClick ? "pointer" : "default",
       }}

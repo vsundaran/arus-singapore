@@ -36,6 +36,10 @@ export default function PeopleCard() {
         flexShrink: 0,
         borderRadius: "25px",
         background: "linear-gradient(130deg, #16345D 18.41%, #4A6C99 72.93%)",
+        transition: "box-shadow 0.3s ease-in-out",
+        "&:hover": {
+          boxShadow: "0px 6px 12px rgba(0, 0, 0, 0.25)",
+        },
       }}
     >
       {/* Header Section */}

@@ -27,7 +27,8 @@ const StyledButton = styled(Button)<{ selected?: boolean }>(({ selected }) => ({
   boxShadow: "none",
   whiteSpace: "nowrap",
   "&:hover": {
-    background: selected ? "#D78E28" : "rgba(255, 205, 23, 0.1)",
+    color: "white",
+    background: "#D78E28",
     boxShadow: "none",
   },
 }));
@@ -41,7 +42,6 @@ const CategoryButton: React.FC<CategoryButtonProps> = ({
     <StyledButton selected={selected} onClick={onClick}>
       <Typography
         sx={{
-          color: selected ? "#FFF" : "#000",
           textAlign: "center",
           fontSize: "14px",
           fontStyle: "normal",
@@ -50,6 +50,9 @@ const CategoryButton: React.FC<CategoryButtonProps> = ({
           letterSpacing: "0.2px",
           overflow: "hidden",
           textOverflow: "ellipsis",
+          "&:hover": {
+            color: "white",
+          },
         }}
       >
         {label}

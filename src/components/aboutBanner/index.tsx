@@ -5,6 +5,7 @@ import { Box, Grid, Typography } from "@mui/material";
 import groupPhoto from "../../assets/img/groupPhoto.svg";
 import PeopleCard from "./peopleCard";
 import OrganisationCard from "./organizationCard";
+import CircleUI from "./circle";
 
 const AboutBanner: React.FC = () => {
   // Common styles
@@ -60,8 +61,48 @@ const AboutBanner: React.FC = () => {
         </Box>
       </center>
 
-      <Box textAlign="center" mb={"64px"}>
+      <Box
+        textAlign="center"
+        mb={"64px"}
+        position={"relative"}
+        sx={{
+          "& .groupPhoto": {
+            transform: "scale(1)",
+            filter: "contrast(1.5)",
+            transition: "all 0.3s ease-in-out",
+          },
+          "&:hover": {
+            "& .groupPhoto": {
+              transform: "scale(1.1)",
+              filter: "contrast(1.5)",
+            },
+
+            "& .circle": {
+              opacity: 1,
+            },
+          },
+        }}
+      >
+        <Box
+          className="circle"
+          position={"absolute"}
+          display={{ xl: "block", xs: "none" }}
+          top="50%"
+          left="50%"
+          sx={{
+            transform: "translate(-50%, -50%)",
+            maxWidth: "1137px",
+            opacity: 0,
+            transition: "opacity 0.3s ease-in-out",
+          }}
+          width={"90%"}
+          height={"100%"}
+          zIndex={1}
+        >
+          <CircleUI />
+        </Box>
         <img
+          className="groupPhoto"
           src={groupPhoto}
           style={{ width: "100%", maxWidth: "1237px" }}
           alt="Group photo"

@@ -135,7 +135,7 @@ export default function Service() {
     <Box>
       <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 2 }}>
         {services.map((service, index) => (
-          <Grid key={index} size={{ xs: 12, md: 6 }}>
+          <Grid key={index} size={{ xs: 12, md: 6 }} sx={{}}>
             <ServiceCard service={service} />
           </Grid>
         ))}
@@ -156,8 +156,33 @@ function Item({ children }: { children: React.ReactNode }) {
         borderRadius: "20px",
         border: "1px solid #D7DFDF",
         background: "#FFF",
+
+        "& .line": {
+          display: "none",
+        },
+        "&:hover": {
+          boxShadow: "0px 6px 12px rgba(0, 0, 0, 0.25)",
+          "& .line": {
+            display: "block",
+          },
+        },
+        position: "relative",
+        overflow: "hidden",
       }}
     >
+      <Box
+        className="line"
+        sx={{
+          position: "absolute",
+          borderRadius: "100px 0 0 100px",
+          height: "100%",
+          // background: "#21A6DF",
+          width: "6px",
+          background: "linear-gradient(to bottom, #16345D 0%, #21A6DF 100%)",
+          top: 0,
+          left: 0,
+        }}
+      ></Box>
       {children}
     </Box>
   );

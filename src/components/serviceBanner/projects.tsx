@@ -16,6 +16,9 @@ export default function ServiceProject() {
         borderRadius: "25px",
         border: "1px solid #CCD6D8",
         background: "#FFF",
+        "&:hover": {
+          boxShadow: "1px 1px 4px #D78E28",
+        },
       }}
     >
       <Box

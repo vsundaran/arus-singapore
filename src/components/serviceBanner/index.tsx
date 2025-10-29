@@ -41,10 +41,29 @@ const ServiceBanner: React.FC = () => {
               display: { xs: "block", md: "flex" },
               alignItems: "normal",
               justifyContent: "end",
-              // marginX: { xs: "auto", md: "none" },
+              transition:
+                "box-shadow 0.3s ease-in-out, background 0.3s ease-in-out",
+              "&:hover": {
+                boxShadow: "0px 6px 12px rgba(0, 0, 0, 0.25)",
+                background: "#E0F0F7",
+                "& .down-arrow": {
+                  background: "white",
+                },
+              },
+            }}
+            onMouseEnter={(e: any) => {
+              const img = e.currentTarget.querySelector("img");
+              img.style.transition = "transform 0.3s ease-in-out";
+              img.style.transform = "scale(1.2)";
+            }}
+            onMouseLeave={(e) => {
+              const img = e.currentTarget.querySelector("img");
+              if (!img) return;
+              img.style.transition = "transform 0.3s ease-in-out";
+              img.style.transform = "scale(1)";
             }}
           >
-            <Box sx={{ width: "100%", display: "flex" }}>
+            <Box sx={{ width: "100%", display: "flex", overflow: "hidden" }}>
               <img src={coder} style={{ width: "100%", objectFit: "cover" }} />
             </Box>
             <Box
@@ -56,8 +75,10 @@ const ServiceBanner: React.FC = () => {
               justifyContent={"end"}
               paddingX={{ md: "0px", xs: "20px" }}
               paddingY={"12px"}
+              className="service-card-icon"
             >
               <Box
+                className="down-arrow"
                 sx={{
                   position: "absolute",
                   display: "flex",
@@ -70,6 +91,7 @@ const ServiceBanner: React.FC = () => {
                   height: "114px",
                   borderRadius: "50%",
                   background: "#E0F0F7",
+                  transition: "background 0.3s ease-in-out",
                 }}
               >
                 <Box>
@@ -128,9 +150,28 @@ const ServiceBanner: React.FC = () => {
               alignItems: "normal",
               justifyContent: "end",
               marginx: { xs: "auto", md: "none" },
+              transition: "box-shadow 0.3s ease-in-out",
+              "&:hover": {
+                boxShadow: "0px 6px 12px rgba(0, 0, 0, 0.25)",
+                background: "#E7FFF1",
+                "& .down-arrow": {
+                  background: "white",
+                },
+              },
+            }}
+            onMouseEnter={(e: any) => {
+              const img = e.currentTarget.querySelector("img");
+              img.style.transition = "transform 0.3s ease-in-out";
+              img.style.transform = "scale(1.2)";
+            }}
+            onMouseLeave={(e) => {
+              const img = e.currentTarget.querySelector("img");
+              if (!img) return;
+              img.style.transition = "transform 0.3s ease-in-out";
+              img.style.transform = "scale(1)";
             }}
           >
-            <Box sx={{ width: "100%", display: "flex" }}>
+            <Box sx={{ width: "100%", display: "flex", overflow: "hidden" }}>
               <img src={laptop} style={{ width: "100%", objectFit: "cover" }} />
             </Box>
             <Box
@@ -157,6 +198,7 @@ const ServiceBanner: React.FC = () => {
                   borderRadius: "50%",
                   background: "#E7FFF1",
                 }}
+                className="down-arrow"
               >
                 <Box>
                   <svg

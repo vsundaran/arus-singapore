@@ -13,19 +13,34 @@ const StyledChip = styled(Chip)({
   gap: "5px",
   borderRadius: "50px",
   border: "1px solid #FFF",
+  cursor: "pointer",
+
   "& .MuiChip-label": {
-    color: "#FFF",
+    color: "#FFF", // Default color
     fontSize: "14px",
     fontStyle: "normal",
     fontWeight: 500,
     lineHeight: "32px",
     letterSpacing: "0.1px",
-    padding: "0 8px 0 4px", // Adjust padding to maintain spacing
+    padding: "0 8px 0 4px",
+    transition: "all 0.3s ease", // Smooth transition
   },
+
   "& .MuiChip-icon": {
-    // marginLeft: "4px",
     marginRight: "0",
-    fontSize: "16px", // Adjust icon size if needed
+    fontSize: "16px",
+    color: "#FFF", // Default icon color
+    transition: "all 0.3s ease", // Smooth transition
+  },
+
+  "&:hover": {
+    "& .MuiChip-label": {
+      background: "linear-gradient(90deg, #A25919, #FFD12B)",
+      WebkitBackgroundClip: "text",
+      WebkitTextFillColor: "transparent",
+      backgroundClip: "text",
+      color: "transparent",
+    },
   },
 });
 
@@ -46,7 +61,15 @@ export interface CustomChipProps {
 
 // Component with dynamic label and icon
 const NavLinkChip = ({ label, icon, ...props }: CustomChipProps) => {
-  return <StyledChip icon={icon} label={label} variant="outlined" {...props} />;
+  return (
+    <StyledChip
+      className="headerChip"
+      icon={icon}
+      label={label}
+      variant="outlined"
+      {...props}
+    />
+  );
 };
 
 export default NavLinkChip;

@@ -5,12 +5,16 @@ interface ServiceCardProps {
   children?: React.ReactNode;
   className?: string;
   sx?: object;
+  onMouseEnter?: (event: React.MouseEvent) => void;
+  onMouseLeave?: (event: React.MouseEvent) => void;
 }
 
 const ServiceCard: React.FC<ServiceCardProps> = ({
   children,
   className = "",
   sx = {},
+  onMouseEnter = () => {},
+  onMouseLeave = () => {},
 }) => {
   const ServiceCardStyle: any = {
     display: "flex",
@@ -29,7 +33,12 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   };
 
   return (
-    <Box sx={ServiceCardStyle} className={className}>
+    <Box
+      sx={ServiceCardStyle}
+      className={className}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
       {children}
     </Box>
   );

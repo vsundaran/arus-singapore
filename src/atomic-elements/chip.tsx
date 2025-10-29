@@ -13,6 +13,8 @@ const StyledChip = styled(Chip)({
   background: "linear-gradient(90deg, #FFD12B 0%, #A25919 100%)",
   boxShadow: "0 4px 4px 0 rgba(0, 0, 0, 0.25) inset",
 
+  transition: "background 0.3s ease-in-out",
+
   // Label styles
   color: "#FFF",
   textAlign: "center",
@@ -26,6 +28,10 @@ const StyledChip = styled(Chip)({
   "& .MuiChip-label": {
     padding: 0,
     overflow: "visible",
+  },
+
+  "&:hover": {
+    background: "linear-gradient(90deg, #A25919 0%, #FFD12B 100%)",
   },
 });
 

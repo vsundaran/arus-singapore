@@ -20,7 +20,7 @@ export default function Clients() {
       </Box>
       <Grid
         container
-        rowSpacing={1}
+        rowSpacing={2}
         columnSpacing={{ xs: 1, sm: 2, md: 3 }}
         mt={"26px"}
         mb={"30px"}
@@ -89,6 +89,10 @@ function CBS() {
         borderRadius: "25px",
         border: "1px solid #D0D2D3",
         background: "#FFF",
+
+        "&:hover": {
+          boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+        },
       }}
     >
       <svg
@@ -146,6 +150,9 @@ function SBS() {
         borderRadius: "25px",
         border: "1px solid #D0D2D3",
         background: "#FFF",
+        "&:hover": {
+          boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+        },
       }}
     >
       <svg

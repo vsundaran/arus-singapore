@@ -286,6 +286,7 @@ export default function ServiceTabElement() {
                 "&:hover": {
                   background: value === index ? "#FFF" : "#E8F7FF",
                 },
+                width: "32.53%",
                 overflow: "hidden",
                 textOverflow: "ellipsis",
                 whiteSpace: "nowrap",

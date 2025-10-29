@@ -95,6 +95,7 @@ const styles = {
     fontWeight: 600,
     lineHeight: "20px",
     letterSpacing: "0.2px",
+    textAlign: "center",
     mb: 2,
   },
   techCard: {
@@ -207,7 +208,31 @@ export default function TechStack() {
             <Typography sx={styles.categoryTitle}>{category.title}</Typography>
             <Box>
               {category.data.map((item) => (
-                <Box mb={1}>
+                <Box
+                  mb={1}
+                  sx={{
+                    "& .line": {
+                      display: "none",
+                    },
+                    "&:hover": {
+                      boxShadow: "0px 6px 12px rgba(0, 0, 0, 0.25)",
+                      "& .line": {
+                        display: "block",
+                      },
+                    },
+                    position: "relative",
+                  }}
+                >
+                  <Box
+                    className="line"
+                    sx={{
+                      position: "absolute",
+                      borderRadius: "100px 0 0 100px",
+                      height: "100%",
+                      background: "#21A6DF",
+                      width: "6px",
+                    }}
+                  ></Box>
                   <TechCard key={item.label} item={item} />
                 </Box>
               ))}

@@ -10,13 +10,11 @@ const PeopleBanner: React.FC = () => {
   return (
     <Box>
       <BannerDivider label="People" />
-
       <center>
         <Box mb={"34px"}>
           <GradientText labels={["Engage", "Enable", "Excel"]} />
         </Box>
       </center>
-
       <PeopleTabElement />
     </Box>
   );

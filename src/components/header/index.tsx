@@ -2,12 +2,12 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 
 import ArusLogo from "../../assets/img/Arus-logo.svg";
 import SingaporeChip from "../../atomic-elements/chip";
 import NavLinkChip from "../../atomic-elements/navLinkChip";
+import SideBar from "../menuSideDrawer";
 
 function ResponsiveAppBar() {
   return (
@@ -70,7 +70,7 @@ function ResponsiveAppBar() {
                       fill-rule="evenodd"
                       clip-rule="evenodd"
                       d="M6.66666 0C2.98478 0 0 2.98475 0 6.66666C0 10.3485 2.98478 13.3333 6.66666 13.3333C10.3486 13.3333 13.3333 10.3486 13.3333 6.66666C13.3333 2.98475 10.3486 0 6.66666 0ZM6.66666 12C3.72588 12 1.33334 9.60747 1.33334 6.66666C1.33334 3.72584 3.72584 1.33334 6.66666 1.33334C9.6075 1.33334 12 3.72584 12 6.66666C12 9.60747 9.6075 12 6.66666 12ZM7.50147 4C7.50147 4.48338 7.14953 4.83334 6.67344 4.83334C6.17809 4.83334 5.83478 4.48334 5.83478 3.99075C5.83478 3.51731 6.18738 3.16669 6.67344 3.16669C7.14953 3.16669 7.50147 3.51731 7.50147 4ZM6.00147 6H7.33478V10H6.00147V6Z"
-                      fill="white"
+                      fill={"white"}
                     />
                   </svg>
                 }
@@ -159,14 +159,7 @@ function ResponsiveAppBar() {
               display={{ xs: "flex", md: "none" }}
               justifyContent={"end"}
             >
-              <IconButton
-                size="large"
-                edge="start"
-                color="inherit"
-                aria-label="menu"
-              >
-                <MenuIcon />
-              </IconButton>
+              <SideBar />
             </Box>
           </Box>
         </Toolbar>
