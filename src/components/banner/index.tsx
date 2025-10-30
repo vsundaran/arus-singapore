@@ -2,7 +2,7 @@ import React from "react";
 import banner from "../../assets/img/banner-img.jpg";
 import { Box, Typography } from "@mui/material";
 import AspireChip from "../../atomic-elements/aspireChip";
-import StatCard from "../../atomic-elements/StatCard";
+import StatCard from "../../atomic-elements/statCard";
 import FlowtingQuateBar from "../../atomic-elements/flowtingQuateBar";
 
 import home from "../../assets/img/home.svg";

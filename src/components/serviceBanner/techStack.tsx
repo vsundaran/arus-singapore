@@ -16,28 +16,6 @@ interface LevelButtonProps {
 }
 
 // Constants
-const TECH_STACK: TechItem[] = [
-  { label: "Apache Spark", level: "expert" },
-  { label: "AWS", level: "advanced" },
-  { label: "PostgreSQL", level: "advanced" },
-  { label: "Python", level: "expert" },
-  { label: "Apache Kafka", level: "advanced" },
-  { label: "Google Cloud", level: "advanced" },
-  { label: "MongoDB", level: "intermediate" },
-  { label: "SQL", level: "advanced" },
-  { label: "Apache Airflow", level: "intermediate" },
-  { label: "Azure", level: "intermediate" },
-  { label: "Redis", level: "intermediate" },
-  { label: "Scala", level: "intermediate" },
-  { label: "Pandas", level: "expert" },
-  { label: "Snowflake", level: "advanced" },
-  { label: "Elasticsearch", level: "intermediate" },
-  { label: "R", level: "intermediate" },
-  { label: "Dask", level: "intermediate" },
-  { label: "Data Bricks", level: "advanced" },
-  { label: "S3 & Data Lakes", level: "advanced" },
-];
-
 const CATEGORIES = [
   {
     title: "Data Processing",

@@ -6,7 +6,7 @@ import { styled } from "@mui/material/styles";
 import PaginationItem from "@mui/material/PaginationItem";
 import { Button } from "@mui/material";
 
-const CustomPagination = styled(Pagination)(({ theme }) => ({
+const CustomPagination = styled(Pagination)(({}) => ({
   "& .MuiPagination-ul": {
     justifyContent: "center",
     flexWrap: "nowrap",
