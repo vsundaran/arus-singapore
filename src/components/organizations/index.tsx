@@ -1,7 +1,7 @@
 import React from "react";
 import BannerDivider from "../../atomic-elements/bannerDivider";
 import GradientText from "../../atomic-elements/gradientText";
-import { Box } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import OrgasationTabElement from "./organisationTab";
 
 const OrganisationBanner: React.FC = () => {
@@ -16,25 +16,26 @@ const OrganisationBanner: React.FC = () => {
           <GradientText labels={["Plan", "Perform", "Progress"]} />
         </Box>
       </center>
-
-      <Box display={"flex"} justifyContent={"center"}>
-        <Box
-          sx={{
-            paddingTop: "42px",
-            paddingX: { md: "60px", xs: "10px" },
-            maxWidth: "1337px",
-            overflow: "hidden",
-            width: "100%",
-            minHeight: "712px",
-            flexShrink: 0,
-            borderRadius: "50px",
-            background: "#FFF",
-            boxShadow: "0 8px 8px 0 rgba(0, 0, 0, 0.25)",
-          }}
-        >
-          <OrgasationTabElement />
+      <Container maxWidth="xl">
+        <Box display={"flex"} justifyContent={"center"}>
+          <Box
+            sx={{
+              paddingTop: "42px",
+              paddingX: { md: "60px", xs: "10px" },
+              maxWidth: "100%",
+              overflow: "hidden",
+              width: "100%",
+              minHeight: "712px",
+              flexShrink: 0,
+              borderRadius: "50px",
+              background: "#FFF",
+              boxShadow: "0 8px 8px 0 rgba(0, 0, 0, 0.25)",
+            }}
+          >
+            <OrgasationTabElement />
+          </Box>
         </Box>
-      </Box>
+      </Container>
     </Box>
   );
 };

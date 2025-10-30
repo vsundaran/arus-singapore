@@ -1,7 +1,7 @@
 import React from "react";
 import BannerDivider from "../../atomic-elements/bannerDivider";
 import GradientText from "../../atomic-elements/gradientText";
-import { Box } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import PeopleTabElement from "./tabElements";
 
 const PeopleBanner: React.FC = () => {
@@ -15,7 +15,9 @@ const PeopleBanner: React.FC = () => {
           <GradientText labels={["Engage", "Enable", "Excel"]} />
         </Box>
       </center>
-      <PeopleTabElement />
+      <Container maxWidth="xl">
+        <PeopleTabElement />
+      </Container>
     </Box>
   );
 };

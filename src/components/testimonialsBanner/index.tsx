@@ -235,7 +235,7 @@
 import React from "react";
 import BannerDivider from "../../atomic-elements/bannerDivider";
 import GradientText from "../../atomic-elements/gradientText";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import StyledPagination from "../../atomic-elements/pagenation";
 
 const TESTIMONIALS_DATA = [
@@ -412,24 +412,29 @@ const TestimonialsBanner: React.FC = () => {
           <GradientText labels={["Try", "Trust", "Tell"]} />
         </Box>
       </center>
-
-      <Box width={"100%"} maxWidth={"1400px"} mx={"auto"} mt={"26px"}>
-        <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 2 }}>
-          {TESTIMONIALS_DATA.map((testimonial) => (
-            <Grid key={testimonial.id} size={{ xs: 12, sm: 12, xl: 4 }}>
-              <TestimonialCard
-                name={testimonial.name}
-                position={testimonial.position}
-                content={testimonial.content}
-                company={testimonial.company}
-              />
-            </Grid>
-          ))}
-        </Grid>
-        <Box mt={3}>
-          <StyledPagination />
+      <Container maxWidth="xl">
+        <Box width={"100%"} maxWidth={"100%"} mx={"auto"} mt={"26px"}>
+          <Grid
+            container
+            rowSpacing={2}
+            columnSpacing={{ xs: 1, sm: 2, md: 2 }}
+          >
+            {TESTIMONIALS_DATA.map((testimonial) => (
+              <Grid key={testimonial.id} size={{ xs: 12, sm: 12, xl: 4 }}>
+                <TestimonialCard
+                  name={testimonial.name}
+                  position={testimonial.position}
+                  content={testimonial.content}
+                  company={testimonial.company}
+                />
+              </Grid>
+            ))}
+          </Grid>
+          <Box mt={3}>
+            <StyledPagination />
+          </Box>
         </Box>
-      </Box>
+      </Container>
     </Box>
   );
 };
@@ -457,9 +462,9 @@ function Item({ children }: { children: React.ReactNode }) {
           boxShadow: "0 6px 10px rgba(0, 0, 0, 0.25)",
           transform: "translateY(-2px)",
 
-            // "& .starRatingBox": {
-            //   justifyContent: "flex-start !important",
-            // },
+          // "& .starRatingBox": {
+          //   justifyContent: "flex-start !important",
+          // },
           "& .companyBadge": {
             background: "#fdce3a",
           },

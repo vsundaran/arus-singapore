@@ -57,12 +57,20 @@ export interface CustomChipProps {
    * Additional MUI Chip props
    */
   chipProps?: Omit<ChipProps, "icon" | "label" | "sx">;
+
+  onClick?: () => void;
 }
 
 // Component with dynamic label and icon
-const NavLinkChip = ({ label, icon, ...props }: CustomChipProps) => {
+const NavLinkChip = ({
+  label,
+  icon,
+  onClick = () => {},
+  ...props
+}: CustomChipProps) => {
   return (
     <StyledChip
+      onClick={onClick}
       className="headerChip"
       icon={icon}
       label={label}

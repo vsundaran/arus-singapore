@@ -48,7 +48,24 @@ export default function SideBar() {
           "Contact",
         ].map((text) => (
           <ListItem key={text} disablePadding>
-            <ListItemButton sx={{ paddingX: 3 }}>
+            <ListItemButton
+              sx={{ paddingX: 3 }}
+              onClick={() => {
+                const element = document.getElementById(
+                  text === "Contact"
+                    ? "aspire"
+                    : text === "Organizations"
+                    ? "organisations"
+                    : text.toLowerCase()
+                );
+                if (element) {
+                  window.scrollTo({
+                    top: element.offsetTop,
+                    behavior: "smooth",
+                  });
+                }
+              }}
+            >
               <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>

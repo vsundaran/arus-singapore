@@ -5,24 +5,21 @@ import AspireChip from "../../atomic-elements/aspireChip";
 import StatCard from "../../atomic-elements/statCard";
 import FlowtingQuateBar from "../../atomic-elements/flowtingQuateBar";
 
-import home from "../../assets/img/home.svg";
-import message from "../../assets/img/message.svg";
-
 import imgLayer from "../../assets/img/imgLayer.svg";
 
 const Banner: React.FC = () => {
   return (
     <Box>
-      <Box
-        width="100%"
-        position="relative"
-        sx={{
-          backgroundImage: `url(${banner})`,
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          minHeight: "1000px",
-        }}
-      >
+      <Box width="100%" position="relative">
+        <Box
+          component="img"
+          sx={{
+            objectFit: { md: "contain", xs: "cover" },
+            width: "100%",
+            minHeight: "300px",
+          }}
+          src={banner}
+        ></Box>
         <Box
           sx={{
             position: "absolute",
@@ -36,7 +33,12 @@ const Banner: React.FC = () => {
         >
           <img
             src={imgLayer}
-            style={{ objectFit: "cover", height: "100%", width: "100%" }}
+            style={{
+              objectFit: "cover",
+              height: "100%",
+              width: "100%",
+              minHeight: "400px",
+            }}
           />
           <img
             src={imgLayer}
@@ -45,12 +47,13 @@ const Banner: React.FC = () => {
               objectFit: "cover",
               width: "100%",
               height: "100%",
+              minHeight: "400px",
             }}
           />
         </Box>
-        <Box width="100%" height="100%">
+        <Box width="100%" height="100%" position={"absolute"} top={0}>
           <Box mb={"60px"} pt={"60px"}>
-            <center>
+            <center style={{ padding: "0px 10px" }}>
               <AspireChip />
             </center>
           </Box>
@@ -94,16 +97,20 @@ const Banner: React.FC = () => {
           </center>
 
           <Box
+            mt={6}
+            paddingX={"10px"}
             display={"flex"}
             justifyContent={"center"}
-            position={"absolute"}
-            bottom={"30%"}
-            left={"50%"}
+            // position={"absolute"}
+            // bottom={"33%"}
+            // left={"50%"}
             width={"100%"}
-            zIndex={1}
-            sx={{
-              transform: { md: "translateX(-50%)", xs: "translateX(-50%)" },
-            }}
+            zIndex={10}
+            sx={
+              {
+                // transform: { md: "translateX(-50%)", xs: "translateX(-50%)" },
+              }
+            }
           >
             <FlowtingQuateBar>
               <Typography
@@ -129,14 +136,11 @@ const Banner: React.FC = () => {
           <Box
             sx={{
               bottom: 0,
-              display: { md: "flex", xs: "none" },
-              // minHeight: "600px",
+              display: { md: "flex", xs: "flex" },
               justifyContent: "center",
               alignItems: "center",
               flexShrink: 0,
               width: "100%",
-              height: "350px",
-              position: "absolute",
               background: "rgba(21, 52, 92, 0.75)",
               boxShadow: "0 4px 4px 0 rgba(0, 0, 0, 0.25)",
             }}
@@ -154,37 +158,33 @@ const Banner: React.FC = () => {
               <StatCard title="Clients" count="25 +" />
               <StatCard title="Employments" count="100 +" />
             </Box>
-
-            <Box display={"flex"} position={"absolute"} right={10} bottom={110}>
-              <img src={home} />
-              <img src={message} />
-            </Box>
           </Box>
         </Box>
       </Box>
 
-      <Box
+      {/* <Box
         sx={{
-          // bottom: 0,
-          mt: "-400px",
-          display: { md: "none", xs: "flex" },
-          minHeight: "600px",
           justifyContent: "center",
           alignItems: "center",
           flexShrink: 0,
           width: "100%",
-          background: "rgba(21, 52, 92, 0.75)",
-          boxShadow: "0 4px 4px 0 rgba(0, 0, 0, 0.25)",
-          position: "relative",
-          backgroundImage: `url(${banner})`,
-          backgroundSize: "cover",
+          // backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
       >
         <Box
+          component="img"
+          sx={{
+            objectFit: { md: "contain", xs: "cover" },
+            width: "100%",
+            minHeight: "300px",
+            position:"absolute"
+          }}
+          src={banner}
+        ></Box>
+        <Box
           sx={{
             background: "rgba(21, 52, 92, 0.75)",
-            position: "absolute",
             top: 0,
             left: 0,
             width: "100%",
@@ -198,20 +198,18 @@ const Banner: React.FC = () => {
           flexWrap={"wrap"}
           justifyContent={"center"}
           sx={{
-            mt: { xs: 5, md: 0 },
+            mt: { xs: -1, md: 0 },
             zIndex: 1,
+            background: "rgba(21, 52, 92, 0.75)",
+            pt: 8,
+            pb: 4,
           }}
         >
           <StatCard title="Projects" count="100 +" />
           <StatCard title="Clients" count="25 +" />
           <StatCard title="Employments" count="100 +" />
         </Box>
-
-        <Box display={"flex"} position={"absolute"} right={10} bottom={110}>
-          <img src={home} />
-          <img src={message} />
-        </Box>
-      </Box>
+      </Box> */}
     </Box>
   );
 };

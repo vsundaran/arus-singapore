@@ -11,13 +11,13 @@ import SideBar from "../menuSideDrawer";
 function ResponsiveAppBar() {
   return (
     <AppBar
-      position="static"
+      position="sticky"
       sx={{
         background: "linear-gradient(90deg, #0D2B53 0%, #4F729F 100%)",
         boxShadow: "0 8px 4px 0 rgba(0, 0, 0, 0.25)",
       }}
     >
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" sx={{ overflowX: "hidden" }}>
         <Toolbar disableGutters>
           <img
             src={ArusLogo}
@@ -36,6 +36,15 @@ function ResponsiveAppBar() {
           >
             <Box display={{ xs: "none", md: "flex" }} gap={"5px"}>
               <NavLinkChip
+                onClick={() => {
+                  const element = document.getElementById("services");
+                  if (element) {
+                    window.scrollTo({
+                      top: element.offsetTop,
+                      behavior: "smooth",
+                    });
+                  }
+                }}
                 label="Services"
                 icon={
                   <svg
@@ -57,6 +66,15 @@ function ResponsiveAppBar() {
               />
               <NavLinkChip
                 label="About"
+                onClick={() => {
+                  const element = document.getElementById("about");
+                  if (element) {
+                    window.scrollTo({
+                      top: element.offsetTop,
+                      behavior: "smooth",
+                    });
+                  }
+                }}
                 icon={
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -76,6 +94,15 @@ function ResponsiveAppBar() {
               />
               <NavLinkChip
                 label="People"
+                onClick={() => {
+                  const element = document.getElementById("people");
+                  if (element) {
+                    window.scrollTo({
+                      top: element.offsetTop,
+                      behavior: "smooth",
+                    });
+                  }
+                }}
                 icon={
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -93,6 +120,15 @@ function ResponsiveAppBar() {
               />
               <NavLinkChip
                 label="Organizations"
+                onClick={() => {
+                  const element = document.getElementById("organisations");
+                  if (element) {
+                    window.scrollTo({
+                      top: element.offsetTop,
+                      behavior: "smooth",
+                    });
+                  }
+                }}
                 icon={
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -113,6 +149,15 @@ function ResponsiveAppBar() {
               />
               <NavLinkChip
                 label="Testimonials"
+                onClick={() => {
+                  const element = document.getElementById("testimonials");
+                  if (element) {
+                    window.scrollTo({
+                      top: element.offsetTop,
+                      behavior: "smooth",
+                    });
+                  }
+                }}
                 icon={
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -131,6 +176,15 @@ function ResponsiveAppBar() {
               />
               <NavLinkChip
                 label="Contacts"
+                onClick={() => {
+                  const element = document.getElementById("aspire");
+                  if (element) {
+                    window.scrollTo({
+                      top: element.offsetTop,
+                      behavior: "smooth",
+                    });
+                  }
+                }}
                 icon={
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

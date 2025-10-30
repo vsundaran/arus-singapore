@@ -44,7 +44,7 @@ const tabStyles = {
   flexShrink: 0,
   borderRadius: "25px",
   minHeight: "30px",
-  marginY: "3px",
+  marginY: "2px",
   textTransform: "none" as const,
   color: "#D78E28 !important",
   fontSize: "14px",

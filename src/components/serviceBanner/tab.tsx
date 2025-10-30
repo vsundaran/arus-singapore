@@ -9,7 +9,7 @@ const TabPaper: React.FC<TabPaperProps> = ({ children, sx, ...props }) => {
   return (
     <Paper
       sx={{
-        maxWidth: "1321px",
+        maxWidth: "100%",
         minHeight: "830px",
         width: "100%",
         flexShrink: 0,

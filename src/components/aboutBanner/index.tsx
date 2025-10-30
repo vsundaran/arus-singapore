@@ -1,7 +1,7 @@
 import React from "react";
 import BannerDivider from "../../atomic-elements/bannerDivider";
 import GradientText from "../../atomic-elements/gradientText";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import groupPhoto from "../../assets/img/groupPhoto.svg";
 import PeopleCard from "./peopleCard";
 import OrganisationCard from "./organizationCard";
@@ -38,7 +38,7 @@ const AboutBanner: React.FC = () => {
     backgroundClip: "text",
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
-    whiteSpace: "nowrap" as const,
+    whiteSpace: "wrap",
   };
 
   const quoteBoxStyles = {
@@ -60,7 +60,9 @@ const AboutBanner: React.FC = () => {
           <GradientText labels={["Innovate", "Impact", "Inspire"]} />
         </Box>
       </center>
+      {/* <Container maxWidth="xl">
 
+</Container> */}
       <Box
         textAlign="center"
         mb={"64px"}
@@ -108,70 +110,71 @@ const AboutBanner: React.FC = () => {
           alt="Group photo"
         />
       </Box>
+      <Container maxWidth="xl">
+        <Box display={"flex"} justifyContent={"center"}>
+          <Box
+            sx={{
+              maxWidth: "100%",
+              paddingX: "35px",
+              paddingY: "60px",
+              minHeight: "431px",
+              flexShrink: 0,
+              borderRadius: "25px",
+              position: "relative",
+              background: "white",
+              "&::before": {
+                content: '""',
+                position: "absolute",
+                top: "-2px",
+                left: "-2px",
+                right: "-2px",
+                bottom: "-2px",
+                background: "linear-gradient(to right, #2162B8, #FFCD17)",
+                borderRadius: "27px",
+                zIndex: -1,
+              },
+            }}
+          >
+            {/* Quote Section */}
+            <center>
+              <Box mt={"-78px"} mb={"40px"}>
+                <Typography component="div" sx={quoteBoxStyles}>
+                  <Box component="span" sx={boldBlueTextStyles}>
+                    “Arus{" "}
+                  </Box>
+                  believes that every success story is built on the{" "}
+                  <Box component="span" sx={gradientTextStyles}>
+                    strength of people and the power of organizations ”
+                  </Box>
+                </Typography>
+              </Box>
+            </center>
 
-      <Box display={"flex"} justifyContent={"center"}>
-        <Box
-          sx={{
-            maxWidth: "100%",
-            paddingX: "35px",
-            paddingY: "60px",
-            minHeight: "431px",
-            flexShrink: 0,
-            borderRadius: "25px",
-            position: "relative",
-            background: "white",
-            "&::before": {
-              content: '""',
-              position: "absolute",
-              top: "-2px",
-              left: "-2px",
-              right: "-2px",
-              bottom: "-2px",
-              background: "linear-gradient(to right, #2162B8, #FFCD17)",
-              borderRadius: "27px",
-              zIndex: -1,
-            },
-          }}
-        >
-          {/* Quote Section */}
-          <center>
-            <Box mt={"-78px"} mb={"40px"}>
-              <Typography component="div" sx={quoteBoxStyles}>
-                <Box component="span" sx={boldBlueTextStyles}>
-                  “Arus{" "}
-                </Box>
-                believes that every success story is built on the{" "}
-                <Box component="span" sx={gradientTextStyles}>
-                  strength of people and the power of organizations ”
-                </Box>
-              </Typography>
+            {/* Cards Section */}
+            <Box mb={"45px"}>
+              <Grid container spacing={{ xs: 1, sm: 2, md: 3 }}>
+                <Grid size={{ md: 6, xs: 12, sm: 6 }}>
+                  <PeopleCard />
+                </Grid>
+                <Grid size={{ md: 6, xs: 12, sm: 6 }}>
+                  <OrganisationCard />
+                </Grid>
+              </Grid>
             </Box>
-          </center>
 
-          {/* Cards Section */}
-          <Box mb={"45px"}>
-            <Grid container spacing={{ xs: 1, sm: 2, md: 3 }}>
-              <Grid size={{ md: 6, xs: 12, sm: 6 }}>
-                <PeopleCard />
-              </Grid>
-              <Grid size={{ md: 6, xs: 12, sm: 6 }}>
-                <OrganisationCard />
-              </Grid>
-            </Grid>
+            {/* Closing Statement */}
+            <Typography component="div" sx={commonTypographyStyles}>
+              <Box component="span" sx={boldBlueTextStyles}>
+                Together,{" "}
+              </Box>
+              these connections form the foundation of our innovation. We don't
+              just build solutions — we foster meaningful relationships that
+              inspire progress, enable transformation, and deliver impact that
+              lasts.
+            </Typography>
           </Box>
-
-          {/* Closing Statement */}
-          <Typography component="div" sx={commonTypographyStyles}>
-            <Box component="span" sx={boldBlueTextStyles}>
-              Together,{" "}
-            </Box>
-            these connections form the foundation of our innovation. We don't
-            just build solutions — we foster meaningful relationships that
-            inspire progress, enable transformation, and deliver impact that
-            lasts.
-          </Typography>
         </Box>
-      </Box>
+      </Container>
     </Box>
   );
 };
