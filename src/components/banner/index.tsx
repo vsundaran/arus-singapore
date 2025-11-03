@@ -5,8 +5,6 @@ import AspireChip from "../../atomic-elements/aspireChip";
 import StatCard from "../../atomic-elements/statCard";
 import FlowtingQuateBar from "../../atomic-elements/flowtingQuateBar";
 
-import imgLayer from "../../assets/img/imgLayer.svg";
-
 const Banner: React.FC = () => {
   return (
     <Box
