@@ -5,6 +5,8 @@ import AspireChip from "../../atomic-elements/aspireChip";
 import StatCard from "../../atomic-elements/statCard";
 import FlowtingQuateBar from "../../atomic-elements/flowtingQuateBar";
 
+import imgLayer from "../../assets/img/imgLayer.svg";
+
 const Banner: React.FC = () => {
   return (
     <Box
@@ -95,12 +97,12 @@ const Banner: React.FC = () => {
             src={banner}
           ></Box>
         </Container>
-        {/* <Box
+        <Box
           className="img-layer"
           sx={{
             position: "absolute",
             width: "100%",
-            zIndex: 0,
+            zIndex: -1,
             top: 0,
             left: 0,
             opacity: 0,
@@ -125,7 +127,7 @@ const Banner: React.FC = () => {
               minHeight: "400px",
             }}
           />
-        </Box> */}
+        </Box>
         <Box
           width="100%"
           height="100%"
@@ -236,55 +238,6 @@ const Banner: React.FC = () => {
           </Box>
         </Box>
       </Box>
-
-      {/* <Box
-        sx={{
-          justifyContent: "center",
-          alignItems: "center",
-          flexShrink: 0,
-          width: "100%",
-          // backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        <Box
-          component="img"
-          sx={{
-            objectFit: { md: "contain", xs: "cover" },
-            width: "100%",
-            minHeight: "300px",
-            position:"absolute"
-          }}
-          src={banner}
-        ></Box>
-        <Box
-          sx={{
-            background: "rgba(21, 52, 92, 0.75)",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            zIndex: 0,
-          }}
-        ></Box>
-        <Box
-          display={"flex"}
-          gap={"34px"}
-          flexWrap={"wrap"}
-          justifyContent={"center"}
-          sx={{
-            mt: { xs: -1, md: 0 },
-            zIndex: 1,
-            background: "rgba(21, 52, 92, 0.75)",
-            pt: 8,
-            pb: 4,
-          }}
-        >
-          <StatCard title="Projects" count="100 +" />
-          <StatCard title="Clients" count="25 +" />
-          <StatCard title="Employments" count="100 +" />
-        </Box>
-      </Box> */}
     </Box>
   );
 };

@@ -24,7 +24,7 @@ export default function AccordionExpandIcon() {
     <div>
       <Box
         width={"100%"}
-        display={{ xs: "flex" }}
+        display={{ xs: "flex" }}    
         flexDirection={{ xs: "column", md: "row" }}
         alignItems={{ xs: "center" }}
         maxWidth={"100%"}
@@ -107,7 +107,15 @@ export default function AccordionExpandIcon() {
                       transition: "background 0.3s ease-in-out",
                     }}
                   >
-                    <Box>
+                    <Box
+                      sx={{
+                        transform:
+                          expandedPanel === "dataEngineering"
+                            ? "rotate(180deg)"
+                            : "unset",
+                        transition: "transform 0.3s ease-in-out",
+                      }}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -251,7 +259,15 @@ export default function AccordionExpandIcon() {
                   }}
                   className="down-arrow"
                 >
-                  <Box>
+                  <Box
+                    sx={{
+                      transform:
+                        expandedPanel === "appDevelopment"
+                          ? "rotate(180deg)"
+                          : "unset",
+                      transition: "transform 0.3s ease-in-out",
+                    }}
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
