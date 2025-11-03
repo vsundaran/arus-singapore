@@ -20,7 +20,7 @@ const Banner: React.FC = () => {
         },
       }}
     >
-      <Box width="100%">
+      <Box width="100%" overflow={"hidden"}>
         <Container maxWidth={"xl"} sx={{ position: "relative" }}>
           {/* First Banner Image */}
           <Box
@@ -102,6 +102,8 @@ const Banner: React.FC = () => {
           sx={{
             position: "absolute",
             width: "100%",
+            maxHeight: "950px",
+            overflow: "hidden",
             zIndex: -1,
             top: 0,
             left: 0,
