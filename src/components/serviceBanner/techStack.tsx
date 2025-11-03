@@ -174,7 +174,7 @@ TechCard.displayName = "TechCard";
 // Main component
 export default function TechStack() {
   return (
-    <Box>
+    <Box width={"100%"}>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         {CATEGORIES.map((category, index) => (
           <Grid

@@ -31,6 +31,7 @@ const StyledChip = styled(Chip)({
   },
 
   "&:hover": {
+    transition: "background 0.5s ease-in-out",
     background: "linear-gradient(90deg, #A25919 0%, #FFD12B 100%)",
   },
 });

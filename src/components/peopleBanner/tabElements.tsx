@@ -90,7 +90,7 @@ const TabContent: React.FC<{ showPagination?: boolean }> = ({
   <>
     <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 2 }}>
       {Array.from({ length: 4 }).map((_, index) => (
-        <Grid key={index} size={{ xs: 12, sm: 6, md: 6, xl: 3 }}>
+        <Grid key={index} size={{ xs: 12, md: 6 }}>
           <LeaderCard />
         </Grid>
       ))}
@@ -138,7 +138,7 @@ export default function PeopleTabElement() {
 
       {TAB_CONFIGS.map((_, index) => (
         <CustomTabPanel key={index} value={value} index={index}>
-          <TabContent showPagination={index === 2} />
+          <TabContent showPagination={true} />
         </CustomTabPanel>
       ))}
     </Box>

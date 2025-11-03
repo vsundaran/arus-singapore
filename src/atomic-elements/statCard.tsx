@@ -9,66 +9,100 @@ interface StatCardProps {
 const StatCard: React.FC<StatCardProps> = ({ title, count }) => {
   return (
     <Box
+      position={"relative"}
       sx={{
         width: "184px",
         height: "111px",
         borderRadius: "15px",
         background: "linear-gradient(90deg, #FFD12B 2.27%, #D78E28 99.93%)",
+        color: "#fff",
         display: "flex",
         flexDirection: "column",
-        flexShrink: 0,
-        color: "#fff",
-        boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
+        alignItems: "center",
+        justifyContent: "center",
         overflow: "hidden",
+        position: "relative",
+        boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
+        cursor: "pointer",
         "&:hover": {
-          "& > .top-section": {
-            background: "linear-gradient(90deg, #FFD12B 2.27%, #D78E28 99.93%)",
-            color: "white",
+          background: "linear-gradient(90deg, #D78E28 2.27%, #FFD12B 99.93%)",
+          ".sliding-box": {
+            transform: "translateY(100%)",
           },
-          "& > .bottom-section": {
-            background: "white",
+          ".bottom-section": {
             color: "#D78E28",
           },
+
+          ".top-section": {
+            color: "white",
+          },
         },
-        transition: "all 0.3s ease",
       }}
     >
-      {/* Top section - becomes gradient on hover */}
+      {/* Sliding white box */}
       <Box
-        className="top-section"
+        className="sliding-box"
         sx={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "50%",
           background: "white",
-          width: "100%",
-          height: "50%",
-          borderTopLeftRadius: "15px",
-          borderTopRightRadius: "15px",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          color: "#D78E28",
-          fontWeight: 600,
-          fontSize: "16px",
-          transition: "all 0.3s ease",
+          transform: "translateY(0%)",
+          transition: "transform 0.2s ease-in-out",
+          zIndex: 1,
         }}
-      >
-        {title}
-      </Box>
+      />
 
-      {/* Bottom section - becomes white on hover */}
+      {/* Content */}
       <Box
-        className="bottom-section"
         sx={{
-          height: "50%",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          fontWeight: 600,
-          fontSize: "22px",
           width: "100%",
-          transition: "all 0.3s ease",
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          position: "relative",
+          zIndex: 2,
         }}
       >
-        {count}
+        {/* Top section - only text visible */}
+        <Box
+          className="top-section"
+          sx={{
+            width: "100%",
+            height: "50%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            fontWeight: 600,
+            fontSize: "14px",
+            color: "#e1a53a",
+            transition: "color 0.3s ease",
+          }}
+        >
+          {title}
+        </Box>
+
+        {/* Bottom section */}
+        <Box
+          className="bottom-section"
+          sx={{
+            width: "100%",
+            height: "50%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            fontWeight: 600,
+            fontSize: "22px",
+            color: "#fff",
+            transition: "all 0.3s ease",
+          }}
+        >
+          {count}
+        </Box>
       </Box>
     </Box>
   );

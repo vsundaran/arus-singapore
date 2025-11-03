@@ -263,30 +263,6 @@ const TESTIMONIALS_DATA = [
     content:
       "“Arus and Elan have been invaluable software developers and partners who never miss deadlines. The entire Arus group seamlessly integrated with our internal development staff to deliver best-in-class solutions. The Arus partnership has delivered invaluable solutions on time and to the highest standard.”",
   },
-  {
-    id: 4,
-    name: "Terry Wolvert",
-    position: "CEO",
-    company: "Digitalrep, LLC, USA",
-    content:
-      "“Arus and Elan have been invaluable software developers and partners who never miss deadlines. The entire Arus group seamlessly integrated with our internal development staff to deliver best-in-class solutions. The Arus partnership has delivered invaluable solutions on time and to the highest standard.”",
-  },
-  {
-    id: 5,
-    name: "Terry Wolvert",
-    position: "CEO",
-    company: "Digitalrep, LLC, USA",
-    content:
-      "“Arus and Elan have been invaluable software developers and partners who never miss deadlines. The entire Arus group seamlessly integrated with our internal development staff to deliver best-in-class solutions. The Arus partnership has delivered invaluable solutions on time and to the highest standard.”",
-  },
-  {
-    id: 6,
-    name: "Terry Wolvert",
-    position: "CEO",
-    company: "Digitalrep, LLC, USA",
-    content:
-      "“Arus and Elan have been invaluable software developers and partners who never miss deadlines. The entire Arus group seamlessly integrated with our internal development staff to deliver best-in-class solutions. The Arus partnership has delivered invaluable solutions on time and to the highest standard.”",
-  },
 ];
 
 // Common styles

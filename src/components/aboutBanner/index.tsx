@@ -60,9 +60,7 @@ const AboutBanner: React.FC = () => {
           <GradientText labels={["Innovate", "Impact", "Inspire"]} />
         </Box>
       </center>
-      {/* <Container maxWidth="xl">
 
-</Container> */}
       <Box
         textAlign="center"
         mb={"64px"}
@@ -88,27 +86,35 @@ const AboutBanner: React.FC = () => {
         <Box
           className="circle"
           position={"absolute"}
-          display={{ xl: "block", xs: "none" }}
           top="50%"
           left="50%"
+          paddingX={1}
           sx={{
-            transform: "translate(-50%, -50%)",
-            maxWidth: "1137px",
+            transform: {
+              md: "translate(-50%, -40%)",
+              xs: "translate(-50%, -25%)",
+            },
+            maxWidth: "1200px",
+            minHeight: "500px",
             opacity: 0,
             transition: "opacity 0.3s ease-in-out",
           }}
-          width={"90%"}
+          width={"100%"}
           height={"100%"}
           zIndex={1}
         >
           <CircleUI />
         </Box>
-        <img
-          className="groupPhoto"
-          src={groupPhoto}
-          style={{ width: "100%", maxWidth: "1237px" }}
-          alt="Group photo"
-        />
+        <center>
+          <Box sx={{ overflow: "hidden", maxWidth: "1326px" }}>
+            <img
+              className="groupPhoto"
+              src={groupPhoto}
+              style={{ width: "100%" }}
+              alt="Group photo"
+            />
+          </Box>
+        </center>
       </Box>
       <Container maxWidth="xl">
         <Box display={"flex"} justifyContent={"center"}>

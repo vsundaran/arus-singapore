@@ -1,6 +1,6 @@
 import React from "react";
 import banner from "../../assets/img/banner-img.jpg";
-import { Box, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import AspireChip from "../../atomic-elements/aspireChip";
 import StatCard from "../../atomic-elements/statCard";
 import FlowtingQuateBar from "../../atomic-elements/flowtingQuateBar";
@@ -9,18 +9,96 @@ import imgLayer from "../../assets/img/imgLayer.svg";
 
 const Banner: React.FC = () => {
   return (
-    <Box>
-      <Box width="100%" position="relative">
-        <Box
-          component="img"
-          sx={{
-            objectFit: { md: "contain", xs: "cover" },
-            width: "100%",
-            minHeight: "300px",
-          }}
-          src={banner}
-        ></Box>
-        <Box
+    <Box
+      sx={{
+        overflow: "hidden",
+        "&:hover": {
+          "& .img-layer": {
+            opacity: 1,
+            transition: "all 0.5s ease-in-out",
+          },
+        },
+      }}
+    >
+      <Box width="100%">
+        <Container maxWidth={"xl"} sx={{ position: "relative" }}>
+          {/* First Banner Image */}
+          <Box
+            component="img"
+            sx={{
+              position: "absolute",
+              top: 0,
+              left: "50%",
+              maxWidth: "100%",
+              objectFit: { md: "contain", xs: "cover" },
+              width: "100%",
+              zIndex: -1,
+              minHeight: "350px",
+              maxHeight: "1300px",
+              transform: "translateX(-50%)", // Center horizontally
+            }}
+            src={banner}
+          ></Box>
+
+          {/* Second Banner Image - for medium screens */}
+          <Box
+            component="img"
+            sx={{
+              position: "absolute",
+              top: { xs: "350px", md: "500px" },
+              left: "50%",
+              maxWidth: "100%",
+              objectFit: { md: "contain", xs: "cover" },
+              width: "100%",
+              zIndex: -1,
+              minHeight: "350px",
+              maxHeight: "830px",
+              display: { xs: "block", lg: "none" },
+              transform: "translateX(-50%)", // Center horizontally
+            }}
+            src={banner}
+          ></Box>
+
+          {/* Third Banner Image - for small screens */}
+          <Box
+            component="img"
+            sx={{
+              position: "absolute",
+              top: "700px",
+              left: "50%",
+              maxWidth: "100%",
+              objectFit: { md: "contain", xs: "cover" },
+              width: "100%",
+              zIndex: -1,
+              minHeight: "350px",
+              maxHeight: "830px",
+              display: { xs: "block", sm: "none" },
+              transform: "translateX(-50%)", // Center horizontally
+            }}
+            src={banner}
+          ></Box>
+
+          {/* Fourth Banner Image - for small screens */}
+          <Box
+            component="img"
+            sx={{
+              position: "absolute",
+              top: "1050px",
+              left: "50%",
+              maxWidth: "100%",
+              objectFit: { md: "contain", xs: "cover" },
+              width: "100%",
+              zIndex: -1,
+              minHeight: "350px",
+              maxHeight: "830px",
+              display: { xs: "block", sm: "none" },
+              transform: "translateX(-50%)", // Center horizontally
+            }}
+            src={banner}
+          ></Box>
+        </Container>
+        {/* <Box
+          className="img-layer"
           sx={{
             position: "absolute",
             width: "100%",
@@ -28,7 +106,6 @@ const Banner: React.FC = () => {
             top: 0,
             left: 0,
             opacity: 0,
-            "&:hover": { opacity: 1, transition: "all 0.5s ease" },
           }}
         >
           <img
@@ -50,8 +127,14 @@ const Banner: React.FC = () => {
               minHeight: "400px",
             }}
           />
-        </Box>
-        <Box width="100%" height="100%" position={"absolute"} top={0}>
+        </Box> */}
+        <Box
+          width="100%"
+          height="100%"
+          // position={"absolute"}
+          top={0}
+          zIndex={2}
+        >
           <Box mb={"60px"} pt={"60px"}>
             <center style={{ padding: "0px 10px" }}>
               <AspireChip />
@@ -97,20 +180,12 @@ const Banner: React.FC = () => {
           </center>
 
           <Box
-            mt={6}
+            mt={{ lg: 14, xs: 8 }}
             paddingX={"10px"}
             display={"flex"}
             justifyContent={"center"}
-            // position={"absolute"}
-            // bottom={"33%"}
-            // left={"50%"}
             width={"100%"}
             zIndex={10}
-            sx={
-              {
-                // transform: { md: "translateX(-50%)", xs: "translateX(-50%)" },
-              }
-            }
           >
             <FlowtingQuateBar>
               <Typography
@@ -143,6 +218,8 @@ const Banner: React.FC = () => {
               width: "100%",
               background: "rgba(21, 52, 92, 0.75)",
               boxShadow: "0 4px 4px 0 rgba(0, 0, 0, 0.25)",
+              py: "150px",
+              mt: "-60px",
             }}
           >
             <Box

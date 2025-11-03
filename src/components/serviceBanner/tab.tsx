@@ -16,7 +16,7 @@ const TabPaper: React.FC<TabPaperProps> = ({ children, sx, ...props }) => {
         borderRadius: "25px",
         border: "1px solid #DAE4E4",
         background: "#FFF",
-        boxShadow: "0 4px 4px 0 rgba(0, 0, 0, 0.25)",
+        boxShadow: "none",
         ...sx,
       }}
       {...props}

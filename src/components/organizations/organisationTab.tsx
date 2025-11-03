@@ -23,7 +23,7 @@ function CustomTabPanel(props: TabPanelProps) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ py: 3, px: { md: 3, xs: 0 } }}>{children}</Box>
+        <Box sx={{ py: 3, px: { lg: 3, xs: 0 } }}>{children}</Box>
       )}
     </div>
   );
@@ -77,8 +77,14 @@ export default function OrganizationTabElement() {
   });
 
   return (
-    <Box my={"43px"} mx={{ md: "50px", xs: "0px" }} overflow={"hidden"}>
+    <Box
+      mt={"43px"}
+      my={{ md: "43px" }}
+      mx={{ md: "50px", xs: "0px" }}
+      overflow={"hidden"}
+    >
       <Box
+        className="organization-tabs"
         sx={{
           borderBottom: 1,
           borderColor: "divider",

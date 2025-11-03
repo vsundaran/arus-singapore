@@ -21,7 +21,7 @@ const OrganisationBanner: React.FC = () => {
           <Box
             sx={{
               paddingTop: "42px",
-              paddingX: { md: "60px", xs: "10px" },
+              paddingX: { xs: "10px" },
               maxWidth: "100%",
               overflow: "hidden",
               width: "100%",
@@ -29,7 +29,9 @@ const OrganisationBanner: React.FC = () => {
               flexShrink: 0,
               borderRadius: "50px",
               background: "#FFF",
-              boxShadow: "0 8px 8px 0 rgba(0, 0, 0, 0.25)",
+              "@media (min-width: 955px)": {
+                boxShadow: "0 8px 8px 0 rgba(0, 0, 0, 0.25)",
+              },
             }}
           >
             <OrgasationTabElement />

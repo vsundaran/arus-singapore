@@ -6,20 +6,22 @@ export default function CircleUI() {
       sx={{
         display: "flex",
         alignItems: "center",
-        justifyContent: "space-between",
+        justifyContent: { xs: "center", md: "space-between" },
         borderRadius: "15px",
         background: "rgba(255, 255, 255, 0.95)",
-        padding: "30px",
+        padding: "20px",
       }}
     >
-      {People}
+      <Box minWidth={"50px"} display={{ md: "flex", xs: "none" }}>
+        {People}
+      </Box>
       <Box display={"flex"} position={"relative"}>
         <Box
           sx={{
-            width: 360,
-            height: 360,
+            width: { xs: 200, md: 340 },
+            height: { xs: 200, md: 340 },
             flexShrink: 0,
-            borderRadius: "360px",
+            borderRadius: "340px",
             border: "2px dashed #2162B8",
             display: "flex",
             alignItems: "center",
@@ -36,11 +38,11 @@ export default function CircleUI() {
         </Box>
         <Box
           sx={{
-            ml: "-160px",
-            width: 360,
-            height: 360,
+            ml: { xs: "-80px", md: "-160px" },
+            width: { xs: 200, md: 340 },
+            height: { xs: 200, md: 340 },
             flexShrink: 0,
-            borderRadius: "360px",
+            borderRadius: "340px",
             border: "2px dashed #FFD12B",
             display: "flex",
             alignItems: "center",
@@ -70,7 +72,9 @@ export default function CircleUI() {
           </Box>
         </Box>
       </Box>
-      {Organisation}
+      <Box minWidth={"50px"} display={{ md: "flex", xs: "none" }}>
+        {Organisation}
+      </Box>
     </Box>
   );
 }

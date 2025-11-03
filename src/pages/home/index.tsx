@@ -43,8 +43,7 @@ const Home: React.FC = () => {
       <Box id="organisations">
         <OrganisationBanner />
       </Box>
-
-      <Box id="testimonials">
+      <Box id="testimonials" mt={{ md: 8, xs: 4 }}>
         <TestimonialsBanner />
       </Box>
       <Box mt={5} id="get-in-touch">

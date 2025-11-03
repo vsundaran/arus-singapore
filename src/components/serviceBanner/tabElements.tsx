@@ -48,6 +48,7 @@ function CustomTabPanel(props: TabPanelProps) {
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
       {...other}
+      style={{ width: "100%" }}
     >
       {value === index && (
         <Box sx={{ p: 3, px: { md: 3, xs: 0 } }}>{children}</Box>
@@ -89,7 +90,7 @@ export default function ServiceTabElement() {
   };
 
   return (
-    <Box my={"43px"} mx={{ md: "50px", xs: "10px" }}>
+    <Box my={"43px"} width={"100%"} px={2}>
       <Box
         sx={{
           borderBottom: 1,
@@ -102,6 +103,7 @@ export default function ServiceTabElement() {
           background: "#DEF5FF",
           boxShadow: "0 4px 4px 0 rgba(0, 0, 0, 0.25) inset",
         }}
+        className="hello"
       >
         <Tabs
           value={value}

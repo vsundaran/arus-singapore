@@ -34,7 +34,7 @@ function ResponsiveAppBar() {
             width={"100%"}
             alignItems={"center"}
           >
-            <Box display={{ xs: "none", md: "flex" }} gap={"5px"}>
+            <Box display={{ xs: "none", lg: "flex" }} gap={"5px"}>
               <NavLinkChip
                 onClick={() => {
                   const element = document.getElementById("services");
@@ -202,14 +202,14 @@ function ResponsiveAppBar() {
               />
             </Box>
 
-            <Box sx={{ flexGrow: 0 }} display={{ xs: "none", md: "flex" }}>
+            <Box sx={{ flexGrow: 0 }} display={{ xs: "none", lg: "flex" }}>
               <Box mr={"-50px"}>
                 <SingaporeChip />
               </Box>
             </Box>
             <Box
               sx={{ width: "100%" }}
-              display={{ xs: "flex", md: "none" }}
+              display={{ xs: "flex", lg: "none" }}
               justifyContent={"end"}
             >
               <SideBar />
