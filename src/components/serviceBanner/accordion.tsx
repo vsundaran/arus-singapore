@@ -170,6 +170,7 @@ export default function AccordionExpandIcon() {
         </Accordion>
 
         <Box
+          width={"100%"}
           sx={{
             height: expandedPanel === "dataEngineering" ? "fit-content" : "0px",
             overflow: "hidden",
