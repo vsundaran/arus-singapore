@@ -4,6 +4,7 @@ import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import StyledPagination from "../../atomic-elements/pagenation";
 import Clients from "./clients";
+import { useLocation } from "react-router-dom";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -75,6 +76,19 @@ export default function OrganizationTabElement() {
       background: value === tabIndex ? "#FFF" : "#E8F7FF",
     },
   });
+
+  const location = useLocation();
+  React.useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const openParam = params.get("open");
+    if (openParam === "clients") {
+      setValue(0);
+    } else if (openParam === "suppliers") {
+      setValue(1);
+    } else if (openParam === "partners") {
+      setValue(2);
+    }
+  }, [location.search]);
 
   return (
     <Box

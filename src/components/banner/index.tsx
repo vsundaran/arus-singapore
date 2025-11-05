@@ -23,23 +23,25 @@ const Banner: React.FC = () => {
       <Box width="100%" overflow={"hidden"}>
         <Container maxWidth={"xl"} sx={{ position: "relative" }}>
           {/* First Banner Image */}
-          <Box
-            component="img"
-            sx={{
-              position: "absolute",
-              top: 0,
-              left: "50%",
-              maxWidth: "100%",
-              objectFit: { md: "contain", xs: "cover" },
-              width: "100%",
-              zIndex: -1,
-              minHeight: "350px",
-              maxHeight: "1300px",
-              transform: "translateX(-50%)", // Center horizontally
-              opacity: { md: 1, xs: 0.5 },
-            }}
-            src={banner}
-          ></Box>
+          <Box>
+            <Box
+              component="img"
+              sx={{
+                position: "absolute",
+                top: 0,
+                left: "50%",
+                maxWidth: "100%",
+                objectFit: { md: "contain", xs: "cover" },
+                width: "100%",
+                zIndex: -1,
+                minHeight: "350px",
+                maxHeight: "1300px",
+                transform: "translateX(-50%)", // Center horizontally
+                opacity: { md: 1, xs: 0.5 },
+              }}
+              src={banner}
+            ></Box>
+          </Box>
 
           {/* Second Banner Image - for medium screens */}
           <Box
@@ -102,13 +104,16 @@ const Banner: React.FC = () => {
           top={0}
           zIndex={2}
         >
-          <Box mb={"60px"} pt={"60px"}>
+          <Box mb={"60px"} pt={"60px"} data-aos="fade-up">
             <center style={{ padding: "0px 10px" }}>
               <AspireChip />
             </center>
           </Box>
           <center>
             <Typography
+              data-aos="fade-up"
+              data-aos-duration="200"
+              data-aos-delay="500"
               display={{ md: "block", xs: "none" }}
               variant="h3"
               color="white"
@@ -129,6 +134,7 @@ const Banner: React.FC = () => {
               Empowering People, Enabling Organizations
             </Typography>
             <Typography
+              data-aos="fade-up"
               display={{ md: "none", xs: "block" }}
               variant="h3"
               color="white"
@@ -147,6 +153,9 @@ const Banner: React.FC = () => {
           </center>
 
           <Box
+            data-aos="fade-up"
+            data-aos-duration="500"
+            data-aos-delay="500"
             mt={{ lg: 14, xs: 8 }}
             paddingX={"10px"}
             display={"flex"}
@@ -190,6 +199,7 @@ const Banner: React.FC = () => {
             }}
           >
             <Box
+              // data-aos="fade-up"
               display={"flex"}
               gap={"34px"}
               flexWrap={"wrap"}
@@ -198,9 +208,27 @@ const Banner: React.FC = () => {
                 mt: { xs: 5, md: 0 },
               }}
             >
-              <StatCard title="Projects" count="100 +" />
-              <StatCard title="Clients" count="25 +" />
-              <StatCard title="Employments" count="100 +" />
+              <Box
+                data-aos="fade-right"
+                data-aos-duration="500"
+                data-aos-delay="200"
+              >
+                <StatCard title="Projects" count="100 +" />
+              </Box>
+              <Box
+                data-aos="fade-up"
+                data-aos-duration="500"
+                data-aos-delay="400"
+              >
+                <StatCard title="Clients" count="25 +" />
+              </Box>
+              <Box
+                data-aos="fade-left"
+                data-aos-duration="500"
+                data-aos-delay="600"
+              >
+                <StatCard title="Employments" count="100 +" />
+              </Box>
             </Box>
           </Box>
         </Box>

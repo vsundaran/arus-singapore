@@ -15,6 +15,7 @@ const Home: React.FC = () => {
   return (
     <Box position={"relative"}>
       <Box
+        data-aos="fade-up"
         display="flex"
         zIndex={1000}
         position={"fixed"}
@@ -136,25 +137,25 @@ const Home: React.FC = () => {
       <Box id="services">
         <ServiceBanner />
       </Box>
-      <Box id="about">
+      <Box id="about" data-aos="fade-up">
         <AboutBanner />
       </Box>
-      <Box id="people">
+      <Box id="people" data-aos="fade-up">
         <PeopleBanner />
       </Box>
-      <Box id="organisations">
+      <Box id="organisations" data-aos="fade-up">
         <OrganisationBanner />
       </Box>
-      <Box id="testimonials" mt={{ md: 8, xs: 4 }}>
+      <Box id="testimonials" mt={{ md: 8, xs: 4 }} data-aos="fade-up">
         <TestimonialsBanner />
       </Box>
-      <Box mt={5} id="get-in-touch">
+      <Box mt={5} id="get-in-touch" data-aos="fade-up">
         <GetInTouchBanner />
       </Box>
-      <Box mt={"21px"} id="aspire">
+      <Box mt={"21px"} id="aspire" data-aos="fade-up">
         <Aspire />
       </Box>
-      <Box mt={"-25px"} id="footer">
+      <Box mt={"-25px"} id="footer" data-aos="fade-up">
         <Footer />
       </Box>
     </Box>

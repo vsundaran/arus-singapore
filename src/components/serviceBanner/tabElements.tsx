@@ -72,7 +72,7 @@ const tabStyles = {
   flexShrink: 0,
   borderRadius: "25px",
   minHeight: "30px",
-  margin: "3px",
+  marginY: "3px",
   textTransform: "none" as const,
   color: "#D78E28 !important",
   fontSize: "14px",
@@ -128,7 +128,7 @@ export default function ServiceTabElement() {
                 "&:hover": {
                   background: value === index ? "#FFF" : "#E8F7FF",
                 },
-                width: "33.33%",
+                // width: "100%",
                 overflow: "hidden",
                 textOverflow: "ellipsis",
                 whiteSpace: "nowrap",

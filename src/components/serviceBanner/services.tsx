@@ -1,4 +1,14 @@
-import { Box, Grid, Typography } from "@mui/material";
+import {
+  Box,
+  Grid,
+  Typography,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 // Service data structure
 const services = [
@@ -88,7 +98,7 @@ const FeatureItem = ({
 
 // Shared styles
 const titleStyle = {
-  mb: "16px",
+  mb: { md: "16px", xs: "0px" },
   fontSize: "14px",
   fontStyle: "normal",
   fontWeight: 600,
@@ -118,7 +128,7 @@ const featureTextStyle = {
   letterSpacing: "0.2px",
 };
 
-// Service Card component
+// Service Card component for desktop
 const ServiceCard = ({ service }: { service: (typeof services)[0] }) => (
   <Item>
     <Typography sx={titleStyle}>{service.title}</Typography>
@@ -129,20 +139,45 @@ const ServiceCard = ({ service }: { service: (typeof services)[0] }) => (
   </Item>
 );
 
-// Main component
-export default function Service() {
-  return (
-    <Box>
-      <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 2 }}>
-        {services.map((service, index) => (
-          <Grid key={index} size={{ xs: 12, md: 6 }} sx={{}}>
-            <ServiceCard service={service} />
-          </Grid>
-        ))}
-      </Grid>
-    </Box>
-  );
-}
+// Service Accordion component for mobile
+const ServiceAccordion = ({ service }: { service: (typeof services)[0] }) => (
+  <Accordion
+    sx={{
+      borderRadius: "20px !important",
+      border: "1px solid #D7DFDF",
+      background: "#FFF",
+      boxShadow: "none",
+      mb: 2,
+      "&:before": {
+        display: "none",
+      },
+      "&:hover": {
+        boxShadow: "0px 6px 12px rgba(103, 103, 103, 0.25)",
+      },
+      position: "relative",
+      overflow: "hidden",
+    }}
+  >
+    <AccordionSummary
+      expandIcon={<ExpandMoreIcon />}
+      sx={{
+        minHeight: "auto !important",
+        padding: { md: "16px 40px", xs: "16px 20px" },
+        "& .MuiAccordionSummary-content": {
+          margin: "0 !important",
+        },
+      }}
+    >
+      <Typography sx={titleStyle}>{service.title}</Typography>
+    </AccordionSummary>
+    <AccordionDetails sx={{ padding: "0 40px 16px 40px" }}>
+      <Typography sx={descriptionStyle}>{service.description}</Typography>
+      {service.features.map((feature, index) => (
+        <FeatureItem key={feature} text={feature} isFirst={index === 0} />
+      ))}
+    </AccordionDetails>
+  </Accordion>
+);
 
 function Item({ children }: { children: React.ReactNode }) {
   return (
@@ -176,7 +211,6 @@ function Item({ children }: { children: React.ReactNode }) {
           position: "absolute",
           borderRadius: "100px 0 0 100px",
           height: "100%",
-          // background: "#21A6DF",
           width: "6px",
           background: "linear-gradient(to bottom, #16345D 0%, #21A6DF 100%)",
           top: 0,
@@ -184,6 +218,36 @@ function Item({ children }: { children: React.ReactNode }) {
         }}
       ></Box>
       {children}
+    </Box>
+  );
+}
+
+// Main component
+export default function Service() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
+  // Mobile view with accordions
+  if (isMobile) {
+    return (
+      <Box>
+        {services.map((service, index) => (
+          <ServiceAccordion key={index} service={service} />
+        ))}
+      </Box>
+    );
+  }
+
+  // Desktop view (original layout)
+  return (
+    <Box>
+      <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 2 }}>
+        {services.map((service, index) => (
+          <Grid key={index} size={{ xs: 12, md: 6 }} sx={{}}>
+            <ServiceCard service={service} />
+          </Grid>
+        ))}
+      </Grid>
     </Box>
   );
 }

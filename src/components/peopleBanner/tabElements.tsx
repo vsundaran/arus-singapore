@@ -5,6 +5,7 @@ import Box from "@mui/material/Box";
 import StyledPagination from "../../atomic-elements/pagenation";
 import { Grid } from "@mui/material";
 import LeaderCard from "./leaderCard";
+import { useLocation } from "react-router-dom";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -109,6 +110,19 @@ export default function PeopleTabElement() {
   const handleChange = (_: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
+
+  const location = useLocation();
+  React.useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const openParam = params.get("open");
+    if (openParam === "leaders") {
+      setValue(0);
+    } else if (openParam === "advisers") {
+      setValue(1);
+    } else if (openParam === "innovators") {
+      setValue(2);
+    }
+  }, [location.search]);
 
   return (
     <Box my={"43px"}>

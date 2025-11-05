@@ -167,10 +167,10 @@ const AboutBanner: React.FC = () => {
             {/* Cards Section */}
             <Box mb={"45px"}>
               <Grid container spacing={{ xs: 1, sm: 2, md: 3 }}>
-                <Grid size={{ md: 6, xs: 12, sm: 6 }}>
+                <Grid size={{ md: 6, xs: 12, sm: 6 }} data-aos="fade-right">
                   <PeopleCard />
                 </Grid>
-                <Grid size={{ md: 6, xs: 12, sm: 6 }}>
+                <Grid size={{ md: 6, xs: 12, sm: 6 }} data-aos="fade-left">
                   <OrganisationCard />
                 </Grid>
               </Grid>

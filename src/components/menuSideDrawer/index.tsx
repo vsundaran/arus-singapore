@@ -7,6 +7,8 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import { IconButton } from "@mui/material";
 
+import CloseIcon from "@mui/icons-material/Close";
+
 type Anchor = "top" | "left" | "bottom" | "right";
 
 export default function SideBar() {
@@ -33,12 +35,38 @@ export default function SideBar() {
 
   const list = (anchor: Anchor) => (
     <Box
-      sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
+      sx={{
+        width: anchor === "top" || anchor === "bottom" ? "auto" : 250,
+        borderRadius: "0 0 25px 25px",
+      }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
+      className="myListBox"
     >
-      <List>
+      <List
+        sx={{
+          paddingY: 0,
+          borderRadius: "0 0 25px 25px",
+          background: "linear-gradient(90deg, #22416B 27.41%, #4D709D 99.95%)",
+        }}
+      >
+        {/* <ListItem 
+        secondaryAction={<IconButton edge="end" aria-label="close" onClick={toggleDrawer(anchor, false)}><CloseIcon /></IconButton>}
+        </ListItem> */}
+
+        <ListItem sx={{ display: "flex", justifyContent: "end" }}>
+          {/* Add your ListItem content here */}
+          {/* <ListItemText primary="Your content" /> */}
+
+          <IconButton
+            edge="end"
+            aria-label="close"
+            onClick={toggleDrawer(anchor, false)}
+          >
+            <CloseIcon sx={{ color: "white" }} />
+          </IconButton>
+        </ListItem>
         {[
           "Services",
           "About",
@@ -46,8 +74,15 @@ export default function SideBar() {
           "Organizations",
           "Testimonials",
           "Contact",
-        ].map((text) => (
-          <ListItem key={text} disablePadding>
+        ].map((text, Index) => (
+          <ListItem
+            key={text}
+            disablePadding
+            sx={{
+              borderBottom: Index === 5 ? 0 : "0.5px solid #FFF",
+              paddingY: "6px",
+            }}
+          >
             <ListItemButton
               sx={{ paddingX: 3 }}
               onClick={() => {
@@ -66,7 +101,18 @@ export default function SideBar() {
                 }
               }}
             >
-              <ListItemText primary={text} />
+              <ListItemText
+                primary={text}
+                sx={{
+                  color: "#FFF",
+                  fontFamily: "Inter",
+                  fontSize: "12px",
+                  fontStyle: "normal",
+                  fontWeight: 400,
+                  lineHeight: "28px",
+                  letterSpacing: "0.2px",
+                }}
+              />
             </ListItemButton>
           </ListItem>
         ))}
@@ -75,9 +121,9 @@ export default function SideBar() {
   );
 
   return (
-    <div>
-      {(["right"] as const).map((anchor) => (
-        <React.Fragment key={anchor}>
+    <div style={{ borderRadius: "0 0 25px 25px" }}>
+      {(["top"] as const).map((anchor) => (
+        <Box key={anchor} sx={{ borderRadius: "0 0 25px 25px" }}>
           <IconButton
             onClick={toggleDrawer(anchor, true)}
             size="large"
@@ -102,10 +148,16 @@ export default function SideBar() {
             anchor={anchor}
             open={state[anchor]}
             onClose={toggleDrawer(anchor, false)}
+            className="myDrawer"
+            sx={{
+              borderRadius: "0 0 25px 25px",
+              overflow: "hidden",
+              "& .MuiPaper-root": { borderRadius: "0 0 25px 25px" },
+            }}
           >
             {list(anchor)}
           </Drawer>
-        </React.Fragment>
+        </Box>
       ))}
     </div>
   );

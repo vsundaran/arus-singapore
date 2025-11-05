@@ -4,7 +4,14 @@ import Home from "./pages/home";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import theme from "./theme";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+
 function App() {
+  useEffect(() => {
+    AOS.init({ duration: 800, once: true });
+  }, []);
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />

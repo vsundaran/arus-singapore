@@ -53,6 +53,7 @@ export interface CustomChipProps {
    * The icon element to display on the left side
    */
   icon?: React.ReactElement;
+  deleteIcon?: React.ReactElement | undefined;
   /**
    * Additional MUI Chip props
    */
@@ -66,10 +67,13 @@ const NavLinkChip = ({
   label,
   icon,
   onClick = () => {},
+  deleteIcon = undefined,
   ...props
 }: CustomChipProps) => {
   return (
     <StyledChip
+      deleteIcon={deleteIcon}
+      onDelete={deleteIcon ? onClick : undefined}
       onClick={onClick}
       className="headerChip"
       icon={icon}
