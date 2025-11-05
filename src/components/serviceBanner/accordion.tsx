@@ -24,7 +24,7 @@ export default function AccordionExpandIcon() {
     <div>
       <Box
         width={"100%"}
-        display={{ xs: "flex" }}    
+        display={{ xs: "flex" }}
         flexDirection={{ xs: "column", md: "row" }}
         alignItems={{ xs: "center" }}
         maxWidth={"100%"}
@@ -322,6 +322,7 @@ export default function AccordionExpandIcon() {
 
         <Box
           className="hello"
+          width={"100%"}
           sx={{
             height: expandedPanel === "appDevelopment" ? "fit-content" : "0px",
             overflow: "hidden",

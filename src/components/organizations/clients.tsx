@@ -1,14 +1,62 @@
 import { Box, Grid, Typography } from "@mui/material";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import CategoryButton from "../../atomic-elements/categoryButton";
 import Highlighter from "./highLighter";
 
 const categories = ["All", "Banking", "Government", "E-Commerce", "Consulting"];
+
 export default function Clients() {
   const [selected, setSelected] = useState("All");
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+
+  // --- Drag scroll state ---
+  const isDown = useRef(false);
+  const startX = useRef(0);
+  const scrollLeft = useRef(0);
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    isDown.current = true;
+    startX.current = e.pageX - (scrollRef.current?.offsetLeft || 0);
+    scrollLeft.current = scrollRef.current?.scrollLeft || 0;
+  };
+
+  const handleMouseLeave = () => {
+    isDown.current = false;
+  };
+
+  const handleMouseUp = () => {
+    isDown.current = false;
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDown.current || !scrollRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - scrollRef.current.offsetLeft;
+    const walk = (x - startX.current) * 1.2; // scroll speed
+    scrollRef.current.scrollLeft = scrollLeft.current - walk;
+  };
+
   return (
     <Box>
-      <Box sx={{ display: "flex", gap: "10px" }}>
+      {/* --- Scrollable, draggable category bar --- */}
+      <Box
+        ref={scrollRef}
+        onMouseDown={handleMouseDown}
+        onMouseLeave={handleMouseLeave}
+        onMouseUp={handleMouseUp}
+        onMouseMove={handleMouseMove}
+        sx={{
+          display: "flex",
+          gap: "10px",
+          overflowX: "auto",
+          cursor: "grab",
+          "&:active": { cursor: "grabbing" },
+          "&::-webkit-scrollbar": { display: "none" },
+          "-ms-overflow-style": "none",
+          pb: { xs: 1, sm: 0 },
+          scrollBehavior: "smooth",
+        }}
+      >
         {categories.map((cat) => (
           <CategoryButton
             key={cat}
@@ -18,6 +66,8 @@ export default function Clients() {
           />
         ))}
       </Box>
+
+      {/* --- Grid of clients --- */}
       <Grid
         container
         rowSpacing={2}
@@ -25,49 +75,13 @@ export default function Clients() {
         mt={"26px"}
         mb={"30px"}
       >
-        <Grid size={{ xs: 6, md: 2 }}>
-          <CBS />
-        </Grid>
-        <Grid size={{ xs: 6, md: 2 }}>
-          <SBS />
-        </Grid>
-        <Grid size={{ xs: 6, md: 2 }}>
-          <CBS />
-        </Grid>
-        <Grid size={{ xs: 6, md: 2 }}>
-          <SBS />
-        </Grid>
-        <Grid size={{ xs: 6, md: 2 }}>
-          <CBS />
-        </Grid>
-        <Grid size={{ xs: 6, md: 2 }}>
-          <SBS />
-        </Grid>
-        <Grid size={{ xs: 6, md: 2 }}>
-          <CBS />
-        </Grid>
-        <Grid size={{ xs: 6, md: 2 }}>
-          <SBS />
-        </Grid>
-        <Grid size={{ xs: 6, md: 2 }}>
-          <CBS />
-        </Grid>
-        <Grid size={{ xs: 6, md: 2 }}>
-          <SBS />
-        </Grid>
-        <Grid size={{ xs: 6, md: 2 }}>
-          <CBS />
-        </Grid>
-        <Grid size={{ xs: 6, md: 2 }}>
-          <SBS />
-        </Grid>
-        <Grid size={{ xs: 6, md: 2 }}>
-          <CBS />
-        </Grid>
-        <Grid size={{ xs: 6, md: 2 }}>
-          <SBS />
-        </Grid>
+        {Array.from({ length: 14 }).map((_, i) => (
+          <Grid key={i} size={{ xs: 6, md: 2 }}>
+            {i % 2 === 0 ? <CBS /> : <SBS />}
+          </Grid>
+        ))}
       </Grid>
+
       <Highlighter />
     </Box>
   );

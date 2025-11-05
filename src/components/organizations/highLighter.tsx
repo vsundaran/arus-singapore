@@ -184,7 +184,7 @@ export default function Highlighter() {
             textAlign: "center",
           }}
         >
-          Technology Suppliers
+          Strategic Partners
         </Typography>
       </Box>
     </Box>

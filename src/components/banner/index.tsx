@@ -36,6 +36,7 @@ const Banner: React.FC = () => {
               minHeight: "350px",
               maxHeight: "1300px",
               transform: "translateX(-50%)", // Center horizontally
+              opacity: { md: 1, xs: 0.5 },
             }}
             src={banner}
           ></Box>
@@ -48,10 +49,10 @@ const Banner: React.FC = () => {
               top: { xs: "350px", md: "500px" },
               left: "50%",
               maxWidth: "100%",
-              objectFit: { md: "contain", xs: "cover" },
+              objectFit: { xs: "cover" },
               width: "100%",
               zIndex: -1,
-              minHeight: "350px",
+              minHeight: { md: "450px", xs: "600px" },
               maxHeight: "830px",
               display: { xs: "block", lg: "none" },
               transform: "translateX(-50%)", // Center horizontally
@@ -60,42 +61,6 @@ const Banner: React.FC = () => {
           ></Box>
 
           {/* Third Banner Image - for small screens */}
-          <Box
-            component="img"
-            sx={{
-              position: "absolute",
-              top: "700px",
-              left: "50%",
-              maxWidth: "100%",
-              objectFit: { md: "contain", xs: "cover" },
-              width: "100%",
-              zIndex: -1,
-              minHeight: "350px",
-              maxHeight: "830px",
-              display: { xs: "block", sm: "none" },
-              transform: "translateX(-50%)", // Center horizontally
-            }}
-            src={banner}
-          ></Box>
-
-          {/* Fourth Banner Image - for small screens */}
-          <Box
-            component="img"
-            sx={{
-              position: "absolute",
-              top: "1050px",
-              left: "50%",
-              maxWidth: "100%",
-              objectFit: { md: "contain", xs: "cover" },
-              width: "100%",
-              zIndex: -1,
-              minHeight: "350px",
-              maxHeight: "830px",
-              display: { xs: "block", sm: "none" },
-              transform: "translateX(-50%)", // Center horizontally
-            }}
-            src={banner}
-          ></Box>
         </Container>
         <Box
           className="img-layer"
@@ -220,7 +185,7 @@ const Banner: React.FC = () => {
               width: "100%",
               background: "rgba(21, 52, 92, 0.75)",
               boxShadow: "0 4px 4px 0 rgba(0, 0, 0, 0.25)",
-              py: "150px",
+              py: { sm: "100px", md: "150px", xs: "50px" },
               mt: "-60px",
             }}
           >

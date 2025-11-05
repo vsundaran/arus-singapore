@@ -63,7 +63,7 @@ const AboutBanner: React.FC = () => {
 
       <Box
         textAlign="center"
-        mb={"64px"}
+        mb={{ md: "64px", xs: "32px" }}
         position={"relative"}
         sx={{
           "& .groupPhoto": {
@@ -102,6 +102,7 @@ const AboutBanner: React.FC = () => {
           width={"100%"}
           height={"100%"}
           zIndex={1}
+          display={{ md: "block", xs: "none" }}
         >
           <CircleUI />
         </Box>
@@ -113,6 +114,13 @@ const AboutBanner: React.FC = () => {
               style={{ width: "100%" }}
               alt="Group photo"
             />
+          </Box>
+        </center>
+        <center>
+          <Box
+            sx={{ overflow: "hidden", display: { md: "none", xs: "block" } }}
+          >
+            <CircleUI />
           </Box>
         </center>
       </Box>

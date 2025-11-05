@@ -78,7 +78,7 @@ export default function OrganizationTabElement() {
 
   return (
     <Box
-      mt={"43px"}
+      mt={"34px !important"}
       my={{ md: "43px" }}
       mx={{ md: "50px", xs: "0px" }}
       overflow={"hidden"}

@@ -20,7 +20,7 @@ const OrganisationBanner: React.FC = () => {
         <Box display={"flex"} justifyContent={"center"}>
           <Box
             sx={{
-              paddingTop: "42px",
+              paddingTop: "0px",
               paddingX: { xs: "10px" },
               maxWidth: "100%",
               overflow: "hidden",

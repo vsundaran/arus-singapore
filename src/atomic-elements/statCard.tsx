@@ -11,7 +11,7 @@ const StatCard: React.FC<StatCardProps> = ({ title, count }) => {
     <Box
       position={"relative"}
       sx={{
-        width: "184px",
+        width: { sm: "184px", xs: "220px" },
         height: "111px",
         borderRadius: "15px",
         background: "linear-gradient(90deg, #FFD12B 2.27%, #D78E28 99.93%)",

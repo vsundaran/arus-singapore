@@ -17,7 +17,7 @@ const TAB_CONFIGS = [
   { label: "Leaders", key: "leaders" },
   { label: "Advisers", key: "advisers" },
   { label: "Innovators", key: "innovators" },
-] as const;
+];
 
 function CustomTabPanel(props: TabPanelProps) {
   const { children, value, index, ...other } = props;
@@ -89,7 +89,7 @@ const TabContent: React.FC<{ showPagination?: boolean }> = ({
 }) => (
   <>
     <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 2 }}>
-      {Array.from({ length: 4 }).map((_, index) => (
+      {Array.from({ length: 2 }).map((_, index) => (
         <Grid key={index} size={{ xs: 12, md: 6 }}>
           <LeaderCard />
         </Grid>
@@ -136,11 +136,13 @@ export default function PeopleTabElement() {
         </Tabs>
       </Box>
 
-      {TAB_CONFIGS.map((_, index) => (
-        <CustomTabPanel key={index} value={value} index={index}>
-          <TabContent showPagination={true} />
-        </CustomTabPanel>
-      ))}
+      {TAB_CONFIGS.map((_, index) => {
+        return (
+          <CustomTabPanel key={index} value={value} index={index}>
+            <TabContent showPagination={true} />
+          </CustomTabPanel>
+        );
+      })}
     </Box>
   );
 }

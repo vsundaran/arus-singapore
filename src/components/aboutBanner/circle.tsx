@@ -12,7 +12,7 @@ export default function CircleUI() {
         padding: "20px",
       }}
     >
-      <Box minWidth={"50px"} display={{ md: "flex", xs: "none" }}>
+      <Box minWidth={"50px"} display={{ sm: "flex", xs: "none" }}>
         {People}
       </Box>
       <Box display={"flex"} position={"relative"}>
@@ -72,7 +72,7 @@ export default function CircleUI() {
           </Box>
         </Box>
       </Box>
-      <Box minWidth={"50px"} display={{ md: "flex", xs: "none" }}>
+      <Box minWidth={"50px"} display={{ sm: "flex", xs: "none" }}>
         {Organisation}
       </Box>
     </Box>
