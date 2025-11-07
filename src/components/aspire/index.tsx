@@ -27,7 +27,7 @@ export default function Aspire() {
         className="text"
         sx={{
           color: "#FFF",
-          fontFamily: "Inter !important",
+          // fontFamily: "Inter !important",
           fontSize: { xs: "32px", md: "64px" },
           fontStyle: "normal",
           fontWeight: { xs: "800", md: "300" },

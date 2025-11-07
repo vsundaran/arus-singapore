@@ -112,7 +112,7 @@ export default function ServiceMenu() {
           }}
           sx={{ display: "flex", alignItems: "center", gap: "10px" }}
         >
-          <Box
+          {/* <Box
             sx={{
               display: "flex",
               minWidth: "41px",
@@ -139,7 +139,7 @@ export default function ServiceMenu() {
                 fill="white"
               />
             </svg>
-          </Box>
+          </Box> */}
           <Typography
             sx={{
               color: "#125A79",
@@ -165,7 +165,7 @@ export default function ServiceMenu() {
           }}
           sx={{ display: "flex", alignItems: "center", gap: "10px" }}
         >
-          <Box
+          {/* <Box
             sx={{
               display: "flex",
               minWidth: "41px",
@@ -194,7 +194,7 @@ export default function ServiceMenu() {
                 fill="white"
               />
             </svg>
-          </Box>
+          </Box> */}
           <Typography
             sx={{
               color: "#125A79",

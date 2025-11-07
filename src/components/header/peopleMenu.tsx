@@ -6,7 +6,7 @@ import MenuItem from "@mui/material/MenuItem";
 // import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 // import { IconButton } from "@mui/material";
 import NavLinkChip from "../../atomic-elements/navLinkChip";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 export default function PeopleMenu() {
@@ -109,7 +109,20 @@ export default function PeopleMenu() {
             handleClose();
           }}
         >
-          Leaders
+          <Typography
+            sx={{
+              color: "#125A79",
+              textAlign: "center",
+              fontFamily: "General Sans Variable",
+              fontSize: "14px",
+              fontStyle: "normal",
+              fontWeight: 400,
+              lineHeight: "20px",
+              letterSpacing: "0.2px",
+            }}
+          >
+            Leaders
+          </Typography>
         </MenuItem>
         <MenuItem
           onClick={() => {
@@ -120,7 +133,20 @@ export default function PeopleMenu() {
             handleClose();
           }}
         >
-          Advisers
+          <Typography
+            sx={{
+              color: "#125A79",
+              textAlign: "center",
+              fontFamily: "General Sans Variable",
+              fontSize: "14px",
+              fontStyle: "normal",
+              fontWeight: 400,
+              lineHeight: "20px",
+              letterSpacing: "0.2px",
+            }}
+          >
+            Advisers
+          </Typography>
         </MenuItem>
         <MenuItem
           onClick={() => {
@@ -131,7 +157,20 @@ export default function PeopleMenu() {
             handleClose();
           }}
         >
-          Innovators
+          <Typography
+            sx={{
+              color: "#125A79",
+              textAlign: "center",
+              fontFamily: "General Sans Variable",
+              fontSize: "14px",
+              fontStyle: "normal",
+              fontWeight: 400,
+              lineHeight: "20px",
+              letterSpacing: "0.2px",
+            }}
+          >
+            Innovators
+          </Typography>
         </MenuItem>
       </Menu>
     </div>
